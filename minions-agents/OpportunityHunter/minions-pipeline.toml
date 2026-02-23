@@ -1,0 +1,54 @@
+# minions-pipeline
+name = "minions-pipeline"
+description = "Funnel stage tracking across the full job search lifecycle"
+
+[colors]
+accent = "#A855F7"
+accent-hover = "#9333EA"
+
+[tables.pipeline-stage]
+description = "A defined stage in the job search funnel."
+icon = "📍"
+[tables.pipeline-stage.fields]
+name = "string"
+description = "string"
+order = "number"
+color = "string"
+isTerminal = "boolean"
+autoAdvanceCondition = "string"
+
+[tables.pipeline-entry]
+description = "A job opportunity at a specific stage in the pipeline."
+icon = "🔄"
+[tables.pipeline-entry.fields]
+jobId = "string"
+applicationId = "string"
+stageId = "string"
+enteredStageAt = "string"
+assignedTo = "string"
+priority = "select"
+notes = "string"
+
+[tables.pipeline-transition]
+description = "A recorded movement of a pipeline entry from one stage to another."
+icon = "➡️"
+[tables.pipeline-transition.fields]
+entryId = "string"
+fromStageId = "string"
+toStageId = "string"
+transitionedAt = "string"
+transitionedBy = "string"
+reason = "string"
+
+[tables.funnel-metric]
+description = "An aggregated conversion metric across a pipeline period."
+icon = "📊"
+[tables.funnel-metric.fields]
+periodStart = "string"
+periodEnd = "string"
+totalDiscovered = "number"
+totalShortlisted = "number"
+totalApplied = "number"
+totalReplied = "number"
+totalInterviewed = "number"
+totalWon = "number"

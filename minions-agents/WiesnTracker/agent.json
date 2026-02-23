@@ -1,0 +1,15 @@
+{
+  "name": "WiesnTracker",
+  "toolboxes": [
+    "minions-alerts",
+    "minions-availability",
+    "minions-venues"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

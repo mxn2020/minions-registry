@@ -1,0 +1,43 @@
+# minions-memory
+name = "minions-memory"
+description = "Persistent cross-session memory, recalled facts, and agent knowledge base"
+
+[colors]
+accent = "#0891B2"
+accent-hover = "#0E7490"
+
+[tables.memory-item]
+description = "A recalled fact or observation stored for future agent sessions."
+icon = "🧠"
+[tables.memory-item.fields]
+agentId = "string"
+scope = "select"
+key = "string"
+value = "string"
+confidence = "number"
+sourceRefType = "string"
+sourceRefId = "string"
+createdAt = "string"
+lastAccessedAt = "string"
+expiresAt = "string"
+
+[tables.memory-summary]
+description = "A compressed summary of a past conversation or session for long-term recall."
+icon = "📚"
+[tables.memory-summary.fields]
+agentId = "string"
+sessionId = "string"
+summary = "string"
+keyFacts = "string"
+createdAt = "string"
+tokenCount = "number"
+
+[tables.memory-index]
+description = "A searchable index entry pointing to a memory item or summary."
+icon = "🔍"
+[tables.memory-index.fields]
+memoryId = "string"
+memoryType = "select"
+keywords = "string"
+embedding = "string"
+indexedAt = "string"

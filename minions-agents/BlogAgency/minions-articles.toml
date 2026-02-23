@@ -1,0 +1,61 @@
+# minions-articles
+name = "minions-articles"
+description = "Article drafts, revisions, SEO metadata, and publish status"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.article]
+description = "A blog article with its content, metadata, and status."
+icon = "📄"
+[tables.article.fields]
+blogId = "string"
+briefId = "string"
+title = "string"
+slug = "string"
+body = "string"
+excerpt = "string"
+wordCount = "number"
+readingTimeMinutes = "number"
+status = "select"
+authorId = "string"
+createdAt = "string"
+publishedAt = "string"
+
+[tables.article-revision]
+description = "A versioned revision of an article."
+icon = "✏️"
+[tables.article-revision.fields]
+articleId = "string"
+version = "number"
+body = "string"
+changedBy = "string"
+changeNotes = "string"
+createdAt = "string"
+
+[tables.seo-metadata]
+description = "SEO optimization data for an article."
+icon = "🔍"
+[tables.seo-metadata.fields]
+articleId = "string"
+metaTitle = "string"
+metaDescription = "string"
+canonicalUrl = "string"
+ogImage = "string"
+schemaMarkup = "string"
+internalLinks = "string"
+externalLinks = "string"
+
+[tables.article-score]
+description = "Quality and SEO scoring for an article."
+icon = "⭐"
+[tables.article-score.fields]
+articleId = "string"
+readabilityScore = "number"
+seoScore = "number"
+originalityScore = "number"
+overallScore = "number"
+suggestions = "string"
+scoredAt = "string"
+scoredBy = "string"

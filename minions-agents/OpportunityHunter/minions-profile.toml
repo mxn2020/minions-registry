@@ -1,0 +1,61 @@
+# minions-profile
+name = "minions-profile"
+description = "Your source of truth — verified bio claims, portfolio items, and rate cards"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.bio-claim]
+description = "A verifiable claim about skills or experience."
+icon = "🏷️"
+[tables.bio-claim.fields]
+claim = "string"
+evidenceUrl = "string"
+verified = "boolean"
+lastVerifiedAt = "string"
+confidence = "select"
+
+[tables.portfolio-item]
+description = "A portfolio project with outcomes, stack, and skill tags."
+icon = "🎨"
+[tables.portfolio-item.fields]
+title = "string"
+summary = "string"
+techStack = "string"
+outcomes = "string"
+link = "string"
+ndaProtected = "boolean"
+relevantSkillTags = "string"
+
+[tables.rate-card]
+description = "Platform-specific pricing for hourly and fixed-rate work."
+icon = "💰"
+[tables.rate-card.fields]
+platform = "string"
+hourlyMin = "number"
+hourlyMax = "number"
+fixedProjectMin = "number"
+currency = "string"
+
+[tables.skill-claim]
+description = "A specific technical or soft skill with a self-assessed proficiency level."
+icon = "🧠"
+[tables.skill-claim.fields]
+name = "string"
+category = "string"
+proficiency = "select"
+yearsOfExperience = "number"
+lastUsedAt = "string"
+evidenceIds = "string"
+
+[tables.availability]
+description = "Current availability windows and capacity for new work."
+icon = "📅"
+[tables.availability.fields]
+status = "select"
+hoursPerWeek = "number"
+earliestStartDate = "string"
+timezone = "string"
+preferredEngagementType = "select"
+notes = "string"

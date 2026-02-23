@@ -1,0 +1,56 @@
+# minions-content-research
+name = "minions-content-research"
+description = "Research sources, topic clusters, keyword sets, and content briefs"
+
+[colors]
+accent = "#06B6D4"
+accent-hover = "#0891B2"
+
+[tables.research-source]
+description = "A configured source for content ideas and trends."
+icon = "🔍"
+[tables.research-source.fields]
+name = "string"
+type = "select"
+url = "string"
+blogId = "string"
+isActive = "boolean"
+lastCrawledAt = "string"
+
+[tables.topic-cluster]
+description = "A group of related topics forming a content pillar."
+icon = "🗂️"
+[tables.topic-cluster.fields]
+blogId = "string"
+name = "string"
+pillar = "string"
+keywords = "string"
+competitorUrls = "string"
+status = "select"
+createdAt = "string"
+
+[tables.keyword-set]
+description = "A researched set of keywords with volume and difficulty."
+icon = "🔑"
+[tables.keyword-set.fields]
+topicClusterId = "string"
+keyword = "string"
+searchVolume = "number"
+difficulty = "select"
+intent = "select"
+priority = "select"
+
+[tables.content-brief]
+description = "A structured brief for an article to be written."
+icon = "📋"
+[tables.content-brief.fields]
+blogId = "string"
+topicClusterId = "string"
+title = "string"
+targetKeyword = "string"
+outline = "string"
+wordCountTarget = "number"
+tone = "select"
+status = "select"
+assignedTo = "string"
+createdAt = "string"

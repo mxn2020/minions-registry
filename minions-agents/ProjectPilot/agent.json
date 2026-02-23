@@ -1,0 +1,18 @@
+{
+  "name": "ProjectPilot",
+  "toolboxes": [
+    "minions-decisions",
+    "minions-milestones",
+    "minions-projects",
+    "minions-risks",
+    "minions-sprints",
+    "minions-stakeholders"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

@@ -1,0 +1,42 @@
+# minions-outreach
+name = "minions-outreach"
+description = "Email templates, drip sequences, personalization rules, and send schedules"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.email-template]
+description = "A reusable email template for outreach."
+icon = "✉️"
+[tables.email-template.fields]
+name = "string"
+subject = "string"
+body = "string"
+intent = "select"
+personalizationFields = "string"
+version = "number"
+isActive = "boolean"
+
+[tables.drip-sequence]
+description = "A multi-step email sequence for a lead."
+icon = "💧"
+[tables.drip-sequence.fields]
+name = "string"
+steps = "string"
+delayBetweenDays = "number"
+status = "select"
+targetSegment = "string"
+
+[tables.outreach-send]
+description = "A record of a sent outreach email."
+icon = "📤"
+[tables.outreach-send.fields]
+leadId = "string"
+templateId = "string"
+dripSequenceId = "string"
+stepIndex = "number"
+sentAt = "string"
+status = "select"
+openedAt = "string"
+clickedAt = "string"

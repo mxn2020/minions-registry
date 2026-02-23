@@ -1,0 +1,29 @@
+# minions-oss-releases
+name = "minions-oss-releases"
+description = "Release definitions, changelogs, and publish receipts"
+
+[colors]
+accent = "#06B6D4"
+accent-hover = "#0891B2"
+
+[tables.release]
+description = "A versioned release of an OSS project."
+icon = "🚀"
+[tables.release.fields]
+projectId = "string"
+version = "string"
+changelog = "string"
+featureIds = "string"
+releasedAt = "string"
+publishedTo = "string"
+status = "select"
+
+[tables.publish-receipt]
+description = "Confirmation of a package publish to a registry."
+icon = "✅"
+[tables.publish-receipt.fields]
+releaseId = "string"
+registry = "select"
+packageUrl = "string"
+publishedAt = "string"
+status = "select"

@@ -1,0 +1,32 @@
+# minions-oss-features
+name = "minions-oss-features"
+description = "Feature backlog, daily picks, implementation plans, and acceptance criteria"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.feature]
+description = "A feature in the backlog for an OSS project."
+icon = "🎯"
+[tables.feature.fields]
+projectId = "string"
+title = "string"
+description = "string"
+acceptanceCriteria = "string"
+complexity = "select"
+priority = "select"
+status = "select"
+selectedForDate = "string"
+completedAt = "string"
+
+[tables.implementation-plan]
+description = "A step-by-step plan for implementing a feature."
+icon = "📋"
+[tables.implementation-plan.fields]
+featureId = "string"
+steps = "string"
+estimatedHours = "number"
+filesAffected = "string"
+testsRequired = "string"
+createdAt = "string"

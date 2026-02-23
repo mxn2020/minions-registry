@@ -1,0 +1,63 @@
+# minions-venues
+name = "minions-venues"
+description = "Tent definitions, capacities, reservation rules, and opening schedules for Oktoberfest"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.tent]
+description = "An Oktoberfest tent with its metadata and capacity info."
+icon = "🎪"
+[tables.tent.fields]
+name = "string"
+shortName = "string"
+brewer = "string"
+totalSeats = "number"
+standingCapacity = "number"
+website = "string"
+reservationUrl = "string"
+category = "select"
+isLargeTent = "boolean"
+status = "select"
+
+[tables.tent-area]
+description = "A reservable section within a tent (Boxen, gallery, terrace, etc.)."
+icon = "🪑"
+[tables.tent-area.fields]
+tentId = "string"
+name = "string"
+areaType = "select"
+seats = "number"
+isIndoor = "boolean"
+isEvening = "boolean"
+minimumSpend = "number"
+currency = "string"
+notes = "string"
+
+[tables.reservation-rule]
+description = "Rules and constraints for reserving a specific tent or area."
+icon = "📏"
+[tables.reservation-rule.fields]
+tentId = "string"
+tentAreaId = "string"
+minGroupSize = "number"
+maxGroupSize = "number"
+reservationOpenDate = "string"
+reservationCloseDate = "string"
+mustOrderFood = "boolean"
+depositRequired = "boolean"
+depositAmount = "number"
+notes = "string"
+
+[tables.opening-schedule]
+description = "The daily opening hours and session definitions for a tent."
+icon = "🕐"
+[tables.opening-schedule.fields]
+tentId = "string"
+date = "string"
+openTime = "string"
+closeTime = "string"
+sessionType = "select"
+isSpecialEvent = "boolean"
+eventName = "string"

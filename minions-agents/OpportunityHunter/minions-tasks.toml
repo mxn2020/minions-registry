@@ -1,0 +1,108 @@
+# minions-tasks
+name = "minions-tasks"
+description = "Task and work management across agents, humans, and workflows"
+
+[colors]
+accent = "#6366F1"
+accent-hover = "#4F46E5"
+
+[tables.task]
+description = "A unit of work to be done, assignable to a human or agent."
+icon = "✅"
+[tables.task.fields]
+title = "string"
+description = "string"
+status = "select"
+priority = "select"
+assigneeId = "string"
+assigneeType = "select"
+createdBy = "string"
+createdAt = "string"
+dueAt = "string"
+completedAt = "string"
+tags = "string"
+parentTaskId = "string"
+contextRefType = "string"
+contextRefId = "string"
+
+[tables.task-list]
+description = "An ordered or unordered collection of tasks with a shared purpose."
+icon = "📋"
+[tables.task-list.fields]
+name = "string"
+description = "string"
+taskIds = "string"
+ordered = "boolean"
+ownerId = "string"
+groupId = "string"
+
+[tables.task-dependency]
+description = "A blocking or relational dependency between two tasks."
+icon = "🔗"
+[tables.task-dependency.fields]
+taskId = "string"
+dependsOnTaskId = "string"
+type = "select"
+
+[tables.recurring-task]
+description = "A task template that spawns new instances on a schedule."
+icon = "🔁"
+[tables.recurring-task.fields]
+templateTaskId = "string"
+schedule = "string"
+nextRunAt = "string"
+lastRunAt = "string"
+spawnedTaskIds = "string"
+status = "select"
+
+[tables.task-assignment]
+description = "An explicit assignment of a task to a person or agent with a role."
+icon = "👤"
+[tables.task-assignment.fields]
+taskId = "string"
+assigneeId = "string"
+assigneeType = "select"
+assignedAt = "string"
+assignedBy = "string"
+role = "select"
+
+[tables.task-checkpoint]
+description = "A named milestone or progress marker within a task."
+icon = "🚩"
+[tables.task-checkpoint.fields]
+taskId = "string"
+label = "string"
+completedAt = "string"
+notes = "string"
+
+[tables.task-history-entry]
+description = "An immutable log of a single field change on a task."
+icon = "🕰️"
+[tables.task-history-entry.fields]
+taskId = "string"
+changedAt = "string"
+changedBy = "string"
+field = "string"
+from = "string"
+to = "string"
+
+[tables.task-comment]
+description = "A comment or note left on a task by a human or agent."
+icon = "💬"
+[tables.task-comment.fields]
+taskId = "string"
+authorId = "string"
+authorType = "select"
+body = "string"
+createdAt = "string"
+resolvedAt = "string"
+
+[tables.task-outcome]
+description = "The recorded result of a completed or failed task, including lessons learned."
+icon = "🎯"
+[tables.task-outcome.fields]
+taskId = "string"
+result = "select"
+summary = "string"
+artifactIds = "string"
+lessons = "string"

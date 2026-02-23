@@ -1,0 +1,17 @@
+{
+  "name": "AIDeveloper",
+  "toolboxes": [
+    "minions-agent-tasks",
+    "minions-dev-prompts",
+    "minions-releases",
+    "minions-repos",
+    "minions-scaffolds"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

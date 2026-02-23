@@ -1,0 +1,31 @@
+# minions-test-targets
+name = "minions-test-targets"
+description = "Agent-under-test definitions, endpoints, capabilities, and auth configs"
+
+[colors]
+accent = "#7C3AED"
+accent-hover = "#6D28D9"
+
+[tables.test-target]
+description = "An AI agent registered for testing."
+icon = "🎯"
+[tables.test-target.fields]
+name = "string"
+description = "string"
+endpoint = "string"
+protocol = "select"
+framework = "string"
+capabilities = "string"
+authMethod = "select"
+status = "select"
+createdAt = "string"
+
+[tables.target-capability]
+description = "A declared capability of a test target."
+icon = "⚡"
+[tables.target-capability.fields]
+targetId = "string"
+name = "string"
+description = "string"
+toolNames = "string"
+expectedBehavior = "string"

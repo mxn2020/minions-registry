@@ -1,0 +1,51 @@
+# minions-match
+name = "minions-match"
+description = "Match scoring, shortlists, and hard gate evaluation between jobs and profile"
+
+[colors]
+accent = "#F97316"
+accent-hover = "#EA580C"
+
+[tables.match-score]
+description = "A scored evaluation of a job posting against the candidate profile."
+icon = "🎯"
+[tables.match-score.fields]
+jobId = "string"
+profileId = "string"
+overallScore = "number"
+skillOverlapScore = "number"
+budgetFitScore = "number"
+timezoneFitScore = "number"
+explanations = "string"
+hardGateFailed = "boolean"
+hardGateReasons = "string"
+scoredAt = "string"
+
+[tables.shortlist]
+description = "A curated list of job postings selected for proposal generation."
+icon = "⭐"
+[tables.shortlist.fields]
+name = "string"
+jobIds = "string"
+rationale = "string"
+createdAt = "string"
+status = "select"
+
+[tables.hard-gate]
+description = "A rule that disqualifies a job posting regardless of match score."
+icon = "🚫"
+[tables.hard-gate.fields]
+name = "string"
+condition = "string"
+reason = "string"
+isActive = "boolean"
+
+[tables.match-preference]
+description = "A user-defined preference that biases scoring in a direction."
+icon = "🧭"
+[tables.match-preference.fields]
+name = "string"
+field = "string"
+direction = "select"
+weight = "number"
+isActive = "boolean"

@@ -1,0 +1,54 @@
+# minions-content-assets
+name = "minions-content-assets"
+description = "Text posts, image briefs, video briefs, and generated asset references"
+
+[colors]
+accent = "#F97316"
+accent-hover = "#EA580C"
+
+[tables.text-post]
+description = "A social media text post draft or final."
+icon = "💬"
+[tables.text-post.fields]
+accountId = "string"
+body = "string"
+hashtags = "string"
+calendarSlotId = "string"
+status = "select"
+generationMode = "select"
+createdAt = "string"
+
+[tables.image-brief]
+description = "A brief for generating or sourcing a social image."
+icon = "🖼️"
+[tables.image-brief.fields]
+accountId = "string"
+prompt = "string"
+style = "string"
+dimensions = "string"
+generatedUrl = "string"
+generationMode = "select"
+status = "select"
+
+[tables.video-brief]
+description = "A brief for generating or sourcing a social video."
+icon = "🎬"
+[tables.video-brief.fields]
+accountId = "string"
+prompt = "string"
+style = "string"
+durationSeconds = "number"
+generatedUrl = "string"
+generationMode = "select"
+status = "select"
+
+[tables.asset-bundle]
+description = "A combined post+image+video package ready for publishing."
+icon = "📦"
+[tables.asset-bundle.fields]
+textPostId = "string"
+imageBriefId = "string"
+videoBriefId = "string"
+calendarSlotId = "string"
+status = "select"
+assembledAt = "string"

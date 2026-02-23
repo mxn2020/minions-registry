@@ -1,0 +1,56 @@
+# minions-comms
+name = "minions-comms"
+description = "Messages, threads, and notifications across all communication channels"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.message]
+description = "A single message sent or received on any platform or channel."
+icon = "✉️"
+[tables.message.fields]
+threadId = "string"
+authorId = "string"
+authorType = "select"
+body = "string"
+sentAt = "string"
+platform = "select"
+status = "select"
+isInbound = "boolean"
+
+[tables.thread]
+description = "A grouped conversation with a topic and set of participants."
+icon = "💬"
+[tables.thread.fields]
+topic = "string"
+platform = "select"
+participantIds = "string"
+contextRefType = "string"
+contextRefId = "string"
+status = "select"
+createdAt = "string"
+lastMessageAt = "string"
+
+[tables.notification]
+description = "An outbound alert sent to a human with delivery tracking."
+icon = "🔔"
+[tables.notification.fields]
+recipientId = "string"
+channel = "select"
+subject = "string"
+body = "string"
+sentAt = "string"
+deliveryStatus = "select"
+contextRefType = "string"
+contextRefId = "string"
+
+[tables.follow-up]
+description = "A scheduled follow-up action tied to a thread or contact."
+icon = "⏰"
+[tables.follow-up.fields]
+threadId = "string"
+dueAt = "string"
+reason = "string"
+status = "select"
+assignedTo = "string"

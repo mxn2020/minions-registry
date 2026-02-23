@@ -1,0 +1,50 @@
+# minions-social-research
+name = "minions-social-research"
+description = "Trend sources, competitor snapshots, hashtag sets, and audience notes"
+
+[colors]
+accent = "#A855F7"
+accent-hover = "#9333EA"
+
+[tables.trend-source]
+description = "A configured source for social media trends."
+icon = "📈"
+[tables.trend-source.fields]
+platform = "select"
+name = "string"
+url = "string"
+category = "string"
+isActive = "boolean"
+lastCheckedAt = "string"
+
+[tables.competitor-snapshot]
+description = "A point-in-time capture of a competitor's social presence."
+icon = "🔎"
+[tables.competitor-snapshot.fields]
+competitorHandle = "string"
+platform = "select"
+followerCount = "number"
+engagementRate = "number"
+recentTopics = "string"
+capturedAt = "string"
+
+[tables.hashtag-set]
+description = "A curated set of hashtags for a content theme."
+icon = "��️"
+[tables.hashtag-set.fields]
+name = "string"
+hashtags = "string"
+platform = "select"
+reach = "select"
+category = "string"
+isActive = "boolean"
+
+[tables.audience-insight]
+description = "An observed pattern about the target audience."
+icon = "#👁️"
+[tables.audience-insight.fields]
+accountGroupId = "string"
+insight = "string"
+confidence = "select"
+source = "string"
+observedAt = "string"

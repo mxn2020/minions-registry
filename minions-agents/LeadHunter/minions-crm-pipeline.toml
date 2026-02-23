@@ -1,0 +1,45 @@
+# minions-crm-pipeline
+name = "minions-crm-pipeline"
+description = "Deal stages, transitions, revenue forecasts, and win/loss tracking"
+
+[colors]
+accent = "#0EA5E9"
+accent-hover = "#0284C7"
+
+[tables.deal]
+description = "A potential or active deal in the CRM pipeline."
+icon = "💰"
+[tables.deal.fields]
+leadId = "string"
+serviceId = "string"
+title = "string"
+value = "number"
+currency = "string"
+stage = "select"
+probability = "number"
+expectedCloseDate = "string"
+status = "select"
+createdAt = "string"
+
+[tables.deal-transition]
+description = "A stage change in the CRM pipeline."
+icon = "➡️"
+[tables.deal-transition.fields]
+dealId = "string"
+fromStage = "string"
+toStage = "string"
+changedAt = "string"
+reason = "string"
+changedBy = "string"
+
+[tables.revenue-forecast]
+description = "A periodic revenue forecast from the pipeline."
+icon = "📈"
+[tables.revenue-forecast.fields]
+periodStart = "string"
+periodEnd = "string"
+totalPipeline = "number"
+weightedForecast = "number"
+currency = "string"
+dealCount = "number"
+generatedAt = "string"

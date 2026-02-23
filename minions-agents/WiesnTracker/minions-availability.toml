@@ -1,0 +1,62 @@
+# minions-availability
+name = "minions-availability"
+description = "Availability snapshots, slot states, and change detection for tent reservations"
+
+[colors]
+accent = "#22C55E"
+accent-hover = "#16A34A"
+
+[tables.availability-snapshot]
+description = "A point-in-time capture of what slots are available across a tent."
+icon = "📸"
+[tables.availability-snapshot.fields]
+tentId = "string"
+tentAreaId = "string"
+capturedAt = "string"
+date = "string"
+sessionType = "select"
+slotsTotal = "number"
+slotsAvailable = "number"
+slotsBlocked = "number"
+status = "select"
+rawHtml = "string"
+
+[tables.slot-state]
+description = "The current availability state of a specific date+session+area combination."
+icon = "🟢"
+[tables.slot-state.fields]
+tentId = "string"
+tentAreaId = "string"
+date = "string"
+sessionType = "select"
+state = "select"
+lastCheckedAt = "string"
+lastChangedAt = "string"
+previousState = "select"
+
+[tables.availability-diff]
+description = "A detected change between two snapshots for the same slot."
+icon = "🔄"
+[tables.availability-diff.fields]
+tentId = "string"
+tentAreaId = "string"
+date = "string"
+sessionType = "select"
+fromState = "select"
+toState = "select"
+detectedAt = "string"
+snapshotBeforeId = "string"
+snapshotAfterId = "string"
+
+[tables.scan-config]
+description = "Configuration for how often and what to scan for availability changes."
+icon = "⚙️"
+[tables.scan-config.fields]
+tentId = "string"
+scanIntervalMinutes = "number"
+priority = "select"
+isActive = "boolean"
+lastScanAt = "string"
+nextScanAt = "string"
+errorCount = "number"
+notes = "string"

@@ -1,0 +1,58 @@
+# minions-documents
+name = "minions-documents"
+description = "Versioned text documents, templates, and file attachments"
+
+[colors]
+accent = "#0EA5E9"
+accent-hover = "#0284C7"
+
+[tables.document]
+description = "A versioned text document with a title, body, and owner."
+icon = "📄"
+[tables.document.fields]
+title = "string"
+body = "string"
+format = "select"
+ownerId = "string"
+status = "select"
+version = "number"
+tags = "string"
+contextRefType = "string"
+contextRefId = "string"
+createdAt = "string"
+updatedAt = "string"
+
+[tables.document-version]
+description = "An immutable snapshot of a document at a specific version number."
+icon = "🗃️"
+[tables.document-version.fields]
+documentId = "string"
+version = "number"
+body = "string"
+savedAt = "string"
+savedBy = "string"
+changelog = "string"
+
+[tables.document-template]
+description = "A reusable document scaffold with placeholder fields."
+icon = "🖨️"
+[tables.document-template.fields]
+name = "string"
+description = "string"
+body = "string"
+placeholders = "string"
+category = "string"
+tags = "string"
+
+[tables.attachment]
+description = "A file or binary asset linked to any Minion."
+icon = "📎"
+[tables.attachment.fields]
+filename = "string"
+mimeType = "string"
+sizeBytes = "number"
+url = "string"
+contextRefType = "string"
+contextRefId = "string"
+uploadedAt = "string"
+uploadedBy = "string"

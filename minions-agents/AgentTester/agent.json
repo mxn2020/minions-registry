@@ -1,0 +1,20 @@
+{
+  "name": "AgentTester",
+  "toolboxes": [
+    "minions-audio-tests",
+    "minions-ci-triggers",
+    "minions-component-evals",
+    "minions-test-observability",
+    "minions-test-reports",
+    "minions-test-runs",
+    "minions-test-scenarios",
+    "minions-test-targets"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

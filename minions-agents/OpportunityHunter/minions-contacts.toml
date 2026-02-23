@@ -1,0 +1,54 @@
+# minions-contacts
+name = "minions-contacts"
+description = "People, organizations, and contact channels"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.person]
+description = "A human contact — client, collaborator, recruiter, or any individual."
+icon = "👤"
+[tables.person.fields]
+firstName = "string"
+lastName = "string"
+displayName = "string"
+role = "string"
+organizationId = "string"
+tags = "string"
+notes = "string"
+createdAt = "string"
+
+[tables.organization]
+description = "A company, agency, or team associated with one or more contacts."
+icon = "🏢"
+[tables.organization.fields]
+name = "string"
+industry = "string"
+website = "string"
+country = "string"
+size = "select"
+tags = "string"
+notes = "string"
+
+[tables.contact-channel]
+description = "A specific communication channel owned by a person or organization."
+icon = "📡"
+[tables.contact-channel.fields]
+ownerId = "string"
+ownerType = "select"
+type = "select"
+value = "string"
+isPrimary = "boolean"
+isVerified = "boolean"
+allowedForAutomation = "boolean"
+
+[tables.contact-note]
+description = "A timestamped interaction or observation about a contact."
+icon = "🗒️"
+[tables.contact-note.fields]
+contactId = "string"
+contactType = "select"
+body = "string"
+authorId = "string"
+createdAt = "string"

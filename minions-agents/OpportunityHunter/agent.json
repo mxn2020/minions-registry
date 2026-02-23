@@ -1,0 +1,33 @@
+{
+  "name": "OpportunityHunter",
+  "toolboxes": [
+    "minions-agents",
+    "minions-applications",
+    "minions-approvals",
+    "minions-clients",
+    "minions-comms",
+    "minions-contacts",
+    "minions-contracts",
+    "minions-costs",
+    "minions-documents",
+    "minions-evals",
+    "minions-jobs",
+    "minions-match",
+    "minions-memory",
+    "minions-notes",
+    "minions-pipeline",
+    "minions-profile",
+    "minions-proposals",
+    "minions-scheduler",
+    "minions-skills",
+    "minions-tasks",
+    "minions-taxonomy"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

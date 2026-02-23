@@ -1,0 +1,35 @@
+# minions-oss-projects
+name = "minions-oss-projects"
+description = "Project definitions, repos, version history, and health status"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.oss-project]
+description = "An active open-source project being maintained."
+icon = "📦"
+[tables.oss-project.fields]
+name = "string"
+description = "string"
+ideaId = "string"
+repoUrl = "string"
+packageName = "string"
+currentVersion = "string"
+techStack = "string"
+stars = "number"
+downloads = "number"
+health = "select"
+status = "select"
+createdAt = "string"
+
+[tables.project-metric]
+description = "A periodic health metric snapshot."
+icon = "📈"
+[tables.project-metric.fields]
+projectId = "string"
+stars = "number"
+forks = "number"
+issues = "number"
+downloads = "number"
+capturedAt = "string"

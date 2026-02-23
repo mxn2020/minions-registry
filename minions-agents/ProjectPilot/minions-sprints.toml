@@ -1,0 +1,31 @@
+# minions-sprints
+name = "minions-sprints"
+description = "Sprint definitions, scope, and velocity tracking"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.sprint]
+description = "A time-boxed iteration for an IT project."
+icon = "🏃"
+[tables.sprint.fields]
+projectId = "string"
+name = "string"
+number = "number"
+startDate = "string"
+endDate = "string"
+goal = "string"
+status = "select"
+plannedPoints = "number"
+completedPoints = "number"
+
+[tables.sprint-retrospective]
+description = "Lessons from a completed sprint."
+icon = "🔄"
+[tables.sprint-retrospective.fields]
+sprintId = "string"
+wentWell = "string"
+needsImprovement = "string"
+actionItems = "string"
+createdAt = "string"

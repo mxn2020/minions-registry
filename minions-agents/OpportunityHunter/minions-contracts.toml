@@ -1,0 +1,46 @@
+# minions-contracts
+name = "minions-contracts"
+description = "Agreements, statements of work, terms, and signed documents"
+
+[colors]
+accent = "#64748B"
+accent-hover = "#475569"
+
+[tables.contract]
+description = "A formal agreement between parties for a piece of work."
+icon = "📃"
+[tables.contract.fields]
+title = "string"
+clientId = "string"
+applicationId = "string"
+type = "select"
+status = "select"
+startDate = "string"
+endDate = "string"
+value = "number"
+currency = "string"
+platform = "select"
+signedAt = "string"
+documentId = "string"
+
+[tables.contract-term]
+description = "A specific clause or condition within a contract."
+icon = "📌"
+[tables.contract-term.fields]
+contractId = "string"
+label = "string"
+body = "string"
+isNegotiable = "boolean"
+category = "select"
+
+[tables.deliverable]
+description = "A scoped output committed to within a contract."
+icon = "📦"
+[tables.deliverable.fields]
+contractId = "string"
+title = "string"
+description = "string"
+dueAt = "string"
+status = "select"
+acceptedAt = "string"
+notes = "string"

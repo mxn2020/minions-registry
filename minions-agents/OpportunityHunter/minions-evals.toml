@@ -1,0 +1,55 @@
+# minions-evaluations
+name = "minions-evaluations"
+description = "Benchmarks, test cases, and prompt scoring for continuous agent improvement"
+
+[colors]
+accent = "#DC2626"
+accent-hover = "#B91C1C"
+
+[tables.test-case]
+description = "A defined input and expected output for evaluating an agent or prompt."
+icon = "🧪"
+[tables.test-case.fields]
+name = "string"
+agentId = "string"
+skillId = "string"
+promptVersionRef = "string"
+inputs = "string"
+expectedOutputs = "string"
+rubric = "string"
+tags = "string"
+createdAt = "string"
+
+[tables.test-run]
+description = "A recorded execution of a test case with pass/fail and score."
+icon = "📋"
+[tables.test-run.fields]
+testCaseId = "string"
+agentRunId = "string"
+passed = "boolean"
+score = "number"
+actualOutput = "string"
+evaluatorNotes = "string"
+ranAt = "string"
+
+[tables.benchmark]
+description = "A grouped set of test cases measuring a specific capability dimension."
+icon = "📏"
+[tables.benchmark.fields]
+name = "string"
+description = "string"
+testCaseIds = "string"
+dimension = "string"
+passingThreshold = "number"
+lastRunAt = "string"
+lastScore = "number"
+
+[tables.eval-metric]
+description = "A single measured quality dimension from an evaluation run."
+icon = "📐"
+[tables.eval-metric.fields]
+testRunId = "string"
+dimension = "string"
+score = "number"
+maxScore = "number"
+notes = "string"

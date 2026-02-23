@@ -1,0 +1,31 @@
+# minions-stakeholders
+name = "minions-stakeholders"
+description = "Stakeholder registry, roles, and communication preferences"
+
+[colors]
+accent = "#14B8A6"
+accent-hover = "#0D9488"
+
+[tables.stakeholder]
+description = "A project stakeholder with their role and preferences."
+icon = "🤝"
+[tables.stakeholder.fields]
+projectId = "string"
+contactId = "string"
+name = "string"
+role = "select"
+influence = "select"
+interest = "select"
+communicationPreference = "select"
+notes = "string"
+
+[tables.stakeholder-update]
+description = "A communication sent to a stakeholder."
+icon = "📨"
+[tables.stakeholder-update.fields]
+stakeholderId = "string"
+projectId = "string"
+type = "select"
+summary = "string"
+sentAt = "string"
+channel = "select"

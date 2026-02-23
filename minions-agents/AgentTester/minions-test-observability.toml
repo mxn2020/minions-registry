@@ -1,0 +1,27 @@
+# minions-test-observability
+name = "minions-test-observability"
+description = "Trace capture, tool call logs, reasoning timings, and latency breakdowns"
+
+[colors]
+accent = "#6366F1"
+accent-hover = "#4F46E5"
+
+[tables.test-trace]
+description = "A full execution trace from a test run."
+icon = "🔍"
+[tables.test-trace.fields]
+runId = "string"
+steps = "string"
+totalDurationMs = "number"
+tokenCount = "number"
+toolCallCount = "number"
+capturedAt = "string"
+
+[tables.latency-breakdown]
+description = "Timing breakdown by phase within a test run."
+icon = "⏱️"
+[tables.latency-breakdown.fields]
+traceId = "string"
+phase = "string"
+durationMs = "number"
+percentage = "number"

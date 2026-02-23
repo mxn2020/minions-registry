@@ -1,0 +1,56 @@
+# minions-releases
+name = "minions-releases"
+description = "Release planning, version bumps, changelog generation, and publish targets"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.release-plan]
+description = "A planned release with version target and included features."
+icon = "🚀"
+[tables.release-plan.fields]
+repoDefinitionId = "string"
+version = "string"
+releaseType = "select"
+featureTaskIds = "string"
+changelog = "string"
+scheduledAt = "string"
+status = "select"
+createdAt = "string"
+
+[tables.version-bump]
+description = "A version bump event with before/after versions."
+icon = "🔢"
+[tables.version-bump.fields]
+repoDefinitionId = "string"
+releasePlanId = "string"
+fromVersion = "string"
+toVersion = "string"
+bumpType = "select"
+bumpedAt = "string"
+tagName = "string"
+tagUrl = "string"
+
+[tables.publish-target]
+description = "A registry or platform where releases are published."
+icon = "📤"
+[tables.publish-target.fields]
+repoDefinitionId = "string"
+registry = "select"
+packageName = "string"
+publishCommand = "string"
+isActive = "boolean"
+lastPublishedVersion = "string"
+lastPublishedAt = "string"
+
+[tables.release-receipt]
+description = "Confirmation that a release was published to a target."
+icon = "✅"
+[tables.release-receipt.fields]
+releasePlanId = "string"
+publishTargetId = "string"
+version = "string"
+publishedAt = "string"
+publishedUrl = "string"
+status = "select"

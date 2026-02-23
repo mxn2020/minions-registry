@@ -1,0 +1,31 @@
+# minions-decisions
+name = "minions-decisions"
+description = "Logged decisions with rationale, alternatives, and outcome"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.decision]
+description = "A logged project decision with full context."
+icon = "⚖️"
+[tables.decision.fields]
+projectId = "string"
+title = "string"
+description = "string"
+rationale = "string"
+alternatives = "string"
+decidedBy = "string"
+decidedAt = "string"
+outcome = "string"
+status = "select"
+
+[tables.decision-review]
+description = "A retrospective review of a past decision."
+icon = "🔍"
+[tables.decision-review.fields]
+decisionId = "string"
+reviewedAt = "string"
+wasCorrect = "boolean"
+lessons = "string"
+wouldChangeWhat = "string"

@@ -1,0 +1,39 @@
+# minions-conversations
+name = "minions-conversations"
+description = "Email threads, reply parsing, intent detection, and escalation triggers"
+
+[colors]
+accent = "#F43F5E"
+accent-hover = "#E11D48"
+
+[tables.email-thread]
+description = "A conversation thread with a lead."
+icon = "💬"
+[tables.email-thread.fields]
+leadId = "string"
+subject = "string"
+status = "select"
+lastMessageAt = "string"
+messageCount = "number"
+intent = "select"
+sentiment = "select"
+
+[tables.email-message]
+description = "A single email in a thread."
+icon = "📧"
+[tables.email-message.fields]
+threadId = "string"
+direction = "select"
+body = "string"
+sentAt = "string"
+parsedIntent = "select"
+sentiment = "select"
+
+[tables.escalation-trigger]
+description = "A rule that escalates a conversation to a human."
+icon = "🚨"
+[tables.escalation-trigger.fields]
+name = "string"
+condition = "select"
+action = "select"
+isActive = "boolean"

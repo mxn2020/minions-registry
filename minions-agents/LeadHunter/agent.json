@@ -1,0 +1,20 @@
+{
+  "name": "LeadHunter",
+  "toolboxes": [
+    "minions-conversations",
+    "minions-crm-pipeline",
+    "minions-leads",
+    "minions-orders",
+    "minions-outreach",
+    "minions-prospecting",
+    "minions-services",
+    "minions-territories"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

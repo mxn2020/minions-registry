@@ -1,0 +1,33 @@
+# minions-test-reports
+name = "minions-test-reports"
+description = "Aggregated results, regression diffs, quality trends, and coverage maps"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.test-report]
+description = "An aggregated report across test runs."
+icon = "📊"
+[tables.test-report.fields]
+name = "string"
+targetId = "string"
+periodStart = "string"
+periodEnd = "string"
+totalRuns = "number"
+passRate = "number"
+avgResponseTimeMs = "number"
+regressions = "string"
+generatedAt = "string"
+
+[tables.regression-diff]
+description = "A detected regression between report periods."
+icon = "🔻"
+[tables.regression-diff.fields]
+reportId = "string"
+metric = "string"
+previousValue = "number"
+currentValue = "number"
+delta = "number"
+severity = "select"
+detectedAt = "string"

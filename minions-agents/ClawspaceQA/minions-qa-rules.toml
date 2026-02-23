@@ -1,0 +1,59 @@
+# minions-qa-rules
+name = "minions-qa-rules"
+description = "Validation rules, consistency checks, compliance gates, and auto-fix definitions"
+
+[colors]
+accent = "#EF4444"
+accent-hover = "#DC2626"
+
+[tables.validation-rule]
+description = "A structural or content validation rule applied to toolboxes."
+icon = "📏"
+[tables.validation-rule.fields]
+name = "string"
+description = "string"
+category = "select"
+target = "select"
+condition = "string"
+severity = "select"
+autoFixable = "boolean"
+autoFixCommand = "string"
+isActive = "boolean"
+
+[tables.consistency-check]
+description = "A cross-toolbox consistency check ensuring alignment between related Minions."
+icon = "🔗"
+[tables.consistency-check.fields]
+name = "string"
+description = "string"
+sourceToolbox = "string"
+targetToolbox = "string"
+relation = "string"
+checkQuery = "string"
+severity = "select"
+isActive = "boolean"
+
+[tables.compliance-gate]
+description = "A quality gate that must pass before a clawspace is considered healthy."
+icon = "🚦"
+[tables.compliance-gate.fields]
+name = "string"
+clawspace = "string"
+metric = "string"
+threshold = "number"
+operator = "select"
+currentValue = "number"
+isPassing = "boolean"
+lastCheckedAt = "string"
+
+[tables.auto-fix]
+description = "An automated fix that can resolve a known validation failure."
+icon = "🔧"
+[tables.auto-fix.fields]
+validationRuleId = "string"
+name = "string"
+command = "string"
+dryRunCommand = "string"
+appliedCount = "number"
+lastAppliedAt = "string"
+status = "select"

@@ -1,0 +1,43 @@
+# minions-territories
+name = "minions-territories"
+description = "Country, state, region, city definitions, focus queue, and saturation tracking"
+
+[colors]
+accent = "#6366F1"
+accent-hover = "#4F46E5"
+
+[tables.territory]
+description = "A geographic area for prospecting."
+icon = "🗺️"
+[tables.territory.fields]
+name = "string"
+level = "select"
+parentTerritoryId = "string"
+country = "string"
+state = "string"
+region = "string"
+city = "string"
+estimatedBusinesses = "number"
+status = "select"
+
+[tables.territory-saturation]
+description = "Saturation metrics for a territory."
+icon = "📊"
+[tables.territory-saturation.fields]
+territoryId = "string"
+totalProspects = "number"
+totalContacted = "number"
+replyRate = "number"
+conversionRate = "number"
+saturationPercent = "number"
+lastUpdatedAt = "string"
+
+[tables.focus-queue]
+description = "The ordered list of territories to work through."
+icon = "📋"
+[tables.focus-queue.fields]
+name = "string"
+territoryIds = "string"
+currentIndex = "number"
+status = "select"
+createdAt = "string"

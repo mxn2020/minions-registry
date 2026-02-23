@@ -1,0 +1,47 @@
+# minions-costs
+name = "minions-costs"
+description = "Cost tracking, budgets, and financial ledgers for agent operations"
+
+[colors]
+accent = "#84CC16"
+accent-hover = "#65A30D"
+
+[tables.cost-entry]
+description = "A single trackable cost line from an agent run or operation."
+icon = "💸"
+[tables.cost-entry.fields]
+sourceId = "string"
+sourceType = "select"
+agentId = "string"
+amount = "number"
+currency = "string"
+model = "string"
+tokensUsed = "number"
+incurredAt = "string"
+description = "string"
+
+[tables.budget]
+description = "A spending cap for an agent, workflow, or time period."
+icon = "💰"
+[tables.budget.fields]
+name = "string"
+ownerId = "string"
+ownerType = "select"
+limitAmount = "number"
+currency = "string"
+period = "select"
+currentSpend = "number"
+status = "select"
+alertThreshold = "number"
+
+[tables.cost-ledger]
+description = "An aggregated spending summary across a period or scope."
+icon = "📊"
+[tables.cost-ledger.fields]
+ownerId = "string"
+ownerType = "select"
+periodStart = "string"
+periodEnd = "string"
+totalAmount = "number"
+currency = "string"
+entryIds = "string"

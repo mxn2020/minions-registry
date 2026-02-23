@@ -1,0 +1,45 @@
+# minions-services
+name = "minions-services"
+description = "Service catalog, packages, pricing tiers, case studies, and target industries"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.service]
+description = "A service offered by the agency."
+icon = "💼"
+[tables.service.fields]
+name = "string"
+description = "string"
+category = "select"
+pricingModel = "select"
+basePrice = "number"
+currency = "string"
+targetIndustries = "string"
+caseStudyIds = "string"
+status = "select"
+
+[tables.service-package]
+description = "A bundled offering of multiple services."
+icon = "📦"
+[tables.service-package.fields]
+name = "string"
+description = "string"
+serviceIds = "string"
+totalPrice = "number"
+currency = "string"
+discount = "number"
+status = "select"
+
+[tables.case-study]
+description = "A success story used to sell a service."
+icon = "🏆"
+[tables.case-study.fields]
+serviceId = "string"
+title = "string"
+clientIndustry = "string"
+challenge = "string"
+solution = "string"
+results = "string"
+publishedUrl = "string"

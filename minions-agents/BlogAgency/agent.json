@@ -1,0 +1,16 @@
+{
+  "name": "BlogAgency",
+  "toolboxes": [
+    "minions-articles",
+    "minions-blogs",
+    "minions-content-research",
+    "minions-publishing"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

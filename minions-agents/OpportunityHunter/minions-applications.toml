@@ -1,0 +1,43 @@
+# minions-applications
+name = "minions-applications"
+description = "Application records, submission bundles, platform receipts, and status tracking"
+
+[colors]
+accent = "#06B6D4"
+accent-hover = "#0891B2"
+
+[tables.application]
+description = "A record of a submitted or planned job application."
+icon = "📨"
+[tables.application.fields]
+jobId = "string"
+proposalId = "string"
+platform = "select"
+status = "select"
+submittedAt = "string"
+platformReceipt = "string"
+submittedBy = "string"
+approvalRequestId = "string"
+
+[tables.submission-bundle]
+description = "A packaged set of all assets required to submit a specific application."
+icon = "📦"
+[tables.submission-bundle.fields]
+applicationId = "string"
+proposalId = "string"
+resumeDocumentId = "string"
+caseStudyIds = "string"
+answerSetId = "string"
+attachmentIds = "string"
+assembledAt = "string"
+status = "select"
+
+[tables.application-event]
+description = "A timestamped event in the lifecycle of an application."
+icon = "📅"
+[tables.application-event.fields]
+applicationId = "string"
+eventType = "select"
+occurredAt = "string"
+notes = "string"
+triggeredBy = "string"

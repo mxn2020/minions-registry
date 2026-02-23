@@ -1,0 +1,49 @@
+# minions-oss-content
+name = "minions-oss-content"
+description = "Blog post drafts, README updates, social announcements, and demo scripts"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.release-post]
+description = "A blog post announcing a release."
+icon = "📝"
+[tables.release-post.fields]
+releaseId = "string"
+title = "string"
+body = "string"
+status = "select"
+publishedUrl = "string"
+createdAt = "string"
+publishedAt = "string"
+
+[tables.readme-update]
+description = "A tracked update to a project README."
+icon = "📖"
+[tables.readme-update.fields]
+projectId = "string"
+section = "string"
+content = "string"
+reason = "string"
+appliedAt = "string"
+
+[tables.social-announcement]
+description = "A social media post for a release."
+icon = "📢"
+[tables.social-announcement.fields]
+releaseId = "string"
+platform = "select"
+body = "string"
+status = "select"
+publishedAt = "string"
+
+[tables.demo-script]
+description = "A runnable demo for showcasing a project."
+icon = "🎬"
+[tables.demo-script.fields]
+projectId = "string"
+title = "string"
+script = "string"
+outputSample = "string"
+createdAt = "string"

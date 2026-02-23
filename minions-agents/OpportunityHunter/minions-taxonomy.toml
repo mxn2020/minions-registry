@@ -1,0 +1,63 @@
+# minions-taxonomy
+name = "minions-taxonomy"
+description = "Organizational metadata — groups, categories, tags, namespaces, statuses, and priorities"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.minion-group]
+description = "A named collection of MinionTypes sharing a combined purpose."
+icon = "🗂️"
+[tables.minion-group.fields]
+name = "string"
+description = "string"
+minionTypes = "string"
+tags = "string"
+status = "select"
+
+[tables.minion-category]
+description = "A hierarchical taxonomy node for browsing and classifying MinionTypes."
+icon = "🌲"
+[tables.minion-category.fields]
+name = "string"
+parentCategoryId = "string"
+description = "string"
+path = "string"
+
+[tables.minion-tag]
+description = "A freeform label attachable to any Minion for filtering and search."
+icon = "🏷️"
+[tables.minion-tag.fields]
+name = "string"
+color = "string"
+description = "string"
+namespaceId = "string"
+
+[tables.minion-namespace]
+description = "An ownership or origin scope for a set of MinionTypes."
+icon = "📦"
+[tables.minion-namespace.fields]
+name = "string"
+owner = "string"
+ownerType = "select"
+description = "string"
+
+[tables.minion-status]
+description = "A defined lifecycle stage applicable to MinionTypes that track state."
+icon = "🔄"
+[tables.minion-status.fields]
+name = "string"
+label = "string"
+color = "string"
+isTerminal = "boolean"
+order = "number"
+
+[tables.minion-priority]
+description = "A named priority level with a numeric weight for ordering work."
+icon = "⚡"
+[tables.minion-priority.fields]
+name = "string"
+label = "string"
+weight = "number"
+color = "string"

@@ -1,0 +1,40 @@
+# minions-social-accounts
+name = "minions-social-accounts"
+description = "Account definitions, platforms, namespaces/purposes, and API keys"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.social-account]
+description = "A social media account managed by the system."
+icon = "📱"
+[tables.social-account.fields]
+name = "string"
+platform = "select"
+handle = "string"
+purpose = "string"
+namespace = "string"
+apiKeyRef = "string"
+status = "select"
+createdAt = "string"
+
+[tables.account-group]
+description = "A logical grouping of accounts by purpose."
+icon = "👥"
+[tables.account-group.fields]
+name = "string"
+description = "string"
+accountIds = "string"
+purpose = "string"
+status = "select"
+
+[tables.content-mode-config]
+description = "Per-account config for text/image/video generation modes."
+icon = "⚙️"
+[tables.content-mode-config.fields]
+accountId = "string"
+textMode = "select"
+imageMode = "select"
+videoMode = "select"
+isActive = "boolean"

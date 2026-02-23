@@ -1,0 +1,61 @@
+# minions-qa-reports
+name = "minions-qa-reports"
+description = "Aggregated test reports, health dashboards, trend analysis, and regression alerts"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.qa-report]
+description = "An aggregated report across multiple QA runs for a period."
+icon = "📋"
+[tables.qa-report.fields]
+name = "string"
+clawspace = "string"
+periodStart = "string"
+periodEnd = "string"
+totalRuns = "number"
+overallPassRate = "number"
+failedSuites = "string"
+regressions = "string"
+recommendations = "string"
+generatedAt = "string"
+
+[tables.health-score]
+description = "A computed health score for a clawspace or toolbox."
+icon = "❤️"
+[tables.health-score.fields]
+targetType = "select"
+targetName = "string"
+score = "number"
+grade = "select"
+breakdown = "string"
+previousScore = "number"
+trend = "select"
+computedAt = "string"
+
+[tables.regression-alert]
+description = "A detected quality regression between report periods."
+icon = "🚨"
+[tables.regression-alert.fields]
+reportId = "string"
+clawspace = "string"
+toolboxId = "string"
+metric = "string"
+previousValue = "number"
+currentValue = "number"
+severity = "select"
+detectedAt = "string"
+resolved = "boolean"
+
+[tables.trend-snapshot]
+description = "A point-in-time snapshot for tracking quality trends over time."
+icon = "📈"
+[tables.trend-snapshot.fields]
+targetType = "select"
+targetName = "string"
+passRate = "number"
+healthScore = "number"
+testCount = "number"
+failCount = "number"
+capturedAt = "string"

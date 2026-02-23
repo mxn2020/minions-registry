@@ -1,0 +1,44 @@
+# minions-orders
+name = "minions-orders"
+description = "Order records, service selections, onboarding checklists, and invoices"
+
+[colors]
+accent = "#14B8A6"
+accent-hover = "#0D9488"
+
+[tables.order]
+description = "An order placed by a lead/client."
+icon = "🛒"
+[tables.order.fields]
+leadId = "string"
+dealId = "string"
+serviceIds = "string"
+packageId = "string"
+totalAmount = "number"
+currency = "string"
+status = "select"
+orderedAt = "string"
+completedAt = "string"
+
+[tables.onboarding-checklist]
+description = "Steps to onboard a new client."
+icon = "✅"
+[tables.onboarding-checklist.fields]
+orderId = "string"
+steps = "string"
+currentStep = "number"
+status = "select"
+createdAt = "string"
+
+[tables.order-invoice]
+description = "An invoice generated for an order."
+icon = "🧾"
+[tables.order-invoice.fields]
+orderId = "string"
+invoiceNumber = "string"
+amount = "number"
+currency = "string"
+issuedAt = "string"
+dueAt = "string"
+paidAt = "string"
+status = "select"

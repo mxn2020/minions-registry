@@ -1,0 +1,42 @@
+# minions-test-scenarios
+name = "minions-test-scenarios"
+description = "Conversation scripts, tester personas, edge cases, and golden datasets"
+
+[colors]
+accent = "#2563EB"
+accent-hover = "#1D4ED8"
+
+[tables.test-scenario]
+description = "A multi-turn conversation test script."
+icon = "📜"
+[tables.test-scenario.fields]
+name = "string"
+description = "string"
+targetId = "string"
+persona = "string"
+turns = "string"
+expectedOutcome = "string"
+difficulty = "select"
+tags = "string"
+status = "select"
+
+[tables.tester-persona]
+description = "A simulated user persona for testing."
+icon = "🎭"
+[tables.tester-persona.fields]
+name = "string"
+description = "string"
+traits = "string"
+communicationStyle = "select"
+technicalLevel = "select"
+
+[tables.golden-dataset]
+description = "A curated set of expected input-output pairs."
+icon = "🏆"
+[tables.golden-dataset.fields]
+name = "string"
+targetId = "string"
+entryCount = "number"
+entries = "string"
+createdAt = "string"
+version = "string"

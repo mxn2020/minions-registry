@@ -1,0 +1,44 @@
+# minions-skills
+name = "minions-skills"
+description = "Reusable skill definitions that agents can load, compose, and version"
+
+[colors]
+accent = "#7C3AED"
+accent-hover = "#6D28D9"
+
+[tables.skill-definition]
+description = "A named, versioned skill an agent can load and execute."
+icon = "🧩"
+[tables.skill-definition.fields]
+name = "string"
+description = "string"
+version = "string"
+inputSchema = "string"
+outputSchema = "string"
+promptRef = "string"
+toolsRequired = "string"
+category = "string"
+isActive = "boolean"
+
+[tables.skill-assignment]
+description = "A link between an agent definition and a skill it is permitted to use."
+icon = "🔗"
+[tables.skill-assignment.fields]
+agentId = "string"
+skillId = "string"
+assignedAt = "string"
+assignedBy = "string"
+isActive = "boolean"
+
+[tables.skill-result]
+description = "The output of a skill execution within an agent run."
+icon = "📤"
+[tables.skill-result.fields]
+skillId = "string"
+agentRunId = "string"
+inputs = "string"
+outputs = "string"
+qualityScore = "number"
+executedAt = "string"
+passed = "boolean"
+failureReason = "string"

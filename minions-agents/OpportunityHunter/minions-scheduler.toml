@@ -1,0 +1,45 @@
+# minions-scheduler
+name = "minions-scheduler"
+description = "Schedules, cron triggers, and timed execution definitions"
+
+[colors]
+accent = "#14B8A6"
+accent-hover = "#0D9488"
+
+[tables.schedule]
+description = "A cron or interval-based trigger that activates an agent or workflow."
+icon = "🕐"
+[tables.schedule.fields]
+name = "string"
+description = "string"
+cronExpression = "string"
+timezone = "string"
+targetAgentId = "string"
+targetSkill = "string"
+status = "select"
+lastRunAt = "string"
+nextRunAt = "string"
+createdAt = "string"
+
+[tables.schedule-run]
+description = "A single execution instance triggered by a schedule."
+icon = "▶️"
+[tables.schedule-run.fields]
+scheduleId = "string"
+triggeredAt = "string"
+completedAt = "string"
+status = "select"
+output = "string"
+errorMessage = "string"
+
+[tables.trigger]
+description = "An event-based trigger that fires when a condition is met."
+icon = "⚡"
+[tables.trigger.fields]
+name = "string"
+eventType = "string"
+condition = "string"
+targetAgentId = "string"
+targetSkill = "string"
+isActive = "boolean"
+lastFiredAt = "string"

@@ -1,0 +1,45 @@
+# minions-blogs
+name = "minions-blogs"
+description = "Blog definitions, settings, brand voice, and target audience profiles"
+
+[colors]
+accent = "#3B82F6"
+accent-hover = "#2563EB"
+
+[tables.blog]
+description = "A blog definition with its brand identity and configuration."
+icon = "📝"
+[tables.blog.fields]
+name = "string"
+description = "string"
+domain = "string"
+brandVoice = "string"
+targetAudience = "string"
+niche = "string"
+contentPillars = "string"
+postingFrequency = "select"
+status = "select"
+createdAt = "string"
+
+[tables.brand-guideline]
+description = "A brand voice rule or style constraint for content."
+icon = "🎨"
+[tables.brand-guideline.fields]
+blogId = "string"
+category = "select"
+rule = "string"
+examples = "string"
+priority = "select"
+isActive = "boolean"
+
+[tables.audience-persona]
+description = "A target reader persona for content planning."
+icon = "👤"
+[tables.audience-persona.fields]
+blogId = "string"
+name = "string"
+description = "string"
+painPoints = "string"
+interests = "string"
+contentPreferences = "string"
+createdAt = "string"

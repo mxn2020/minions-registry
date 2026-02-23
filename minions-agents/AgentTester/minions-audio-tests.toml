@@ -1,0 +1,31 @@
+# minions-audio-tests
+name = "minions-audio-tests"
+description = "Voice interaction configs, TTS/STT pipeline settings, and audio samples"
+
+[colors]
+accent = "#F97316"
+accent-hover = "#EA580C"
+
+[tables.audio-test-config]
+description = "Configuration for a voice interaction test."
+icon = "🎤"
+[tables.audio-test-config.fields]
+targetId = "string"
+name = "string"
+mode = "select"
+ttsProvider = "select"
+sttProvider = "select"
+language = "string"
+sampleRate = "number"
+status = "select"
+
+[tables.audio-sample]
+description = "A recorded or generated audio sample for testing."
+icon = "🔊"
+[tables.audio-sample.fields]
+configId = "string"
+transcript = "string"
+audioUrl = "string"
+durationMs = "number"
+sttResult = "string"
+accuracy = "number"

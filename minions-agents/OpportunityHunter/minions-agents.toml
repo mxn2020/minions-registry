@@ -1,0 +1,60 @@
+# minions-agents
+name = "minions-agents"
+description = "Agent definitions, runs, traces, and approval requests for the agent fleet"
+
+[colors]
+accent = "#1D4ED8"
+accent-hover = "#1E40AF"
+
+[tables.agent-definition]
+description = "A structured definition of an AI agent including its role, model, and policies."
+icon = "🤖"
+[tables.agent-definition.fields]
+name = "string"
+role = "select"
+model = "string"
+soulRef = "string"
+skillsRef = "string"
+toolPolicy = "string"
+maxTokensPerRun = "number"
+maxCostPerDay = "number"
+status = "select"
+ownerId = "string"
+createdAt = "string"
+
+[tables.agent-run]
+description = "A single execution instance of an agent with full trace and cost."
+icon = "▶️"
+[tables.agent-run.fields]
+agentId = "string"
+triggeredAt = "string"
+completedAt = "string"
+inputs = "string"
+outputs = "string"
+toolCallsLog = "string"
+tokensUsed = "number"
+cost = "number"
+status = "select"
+errorMessage = "string"
+
+[tables.agent-message]
+description = "A message passed between agents on the internal message bus."
+icon = "📨"
+[tables.agent-message.fields]
+fromAgentId = "string"
+toAgentId = "string"
+type = "string"
+payload = "string"
+sentAt = "string"
+status = "select"
+
+[tables.platform-rule]
+description = "A platform-specific rule governing what automation is permitted."
+icon = "📜"
+[tables.platform-rule.fields]
+platform = "select"
+ruleType = "select"
+description = "string"
+maxActionsPerDay = "number"
+forbiddenActions = "string"
+isActive = "boolean"

@@ -1,0 +1,38 @@
+# minions-prospecting
+name = "minions-prospecting"
+description = "Web search configs, prospect discovery rules, and lead scoring criteria"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.search-config]
+description = "A configured web search for finding prospects."
+icon = "🔍"
+[tables.search-config.fields]
+territoryId = "string"
+query = "string"
+searchEngine = "select"
+industry = "string"
+maxResults = "number"
+isActive = "boolean"
+lastRunAt = "string"
+
+[tables.discovery-rule]
+description = "A rule for qualifying discovered prospects."
+icon = "��"
+[tables.discovery-rule.fields]
+name = "string"
+condition = "string"
+scoreContribution = "number"
+isActive = "boolean"
+
+[tables.scoring-criteria]
+description = "The criteria used to score and rank leads."
+icon = "⭐"
+[tables.scoring-criteria.fields]
+name = "string"
+field = "string"
+weight = "number"
+direction = "select"
+isActive = "boolean"

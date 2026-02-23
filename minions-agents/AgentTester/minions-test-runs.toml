@@ -1,0 +1,33 @@
+# minions-test-runs
+name = "minions-test-runs"
+description = "Execution records, turn-by-turn logs, and assertion results"
+
+[colors]
+accent = "#16A34A"
+accent-hover = "#15803D"
+
+[tables.test-run]
+description = "An execution of a test scenario against a target."
+icon = "▶️"
+[tables.test-run.fields]
+scenarioId = "string"
+targetId = "string"
+status = "select"
+startedAt = "string"
+completedAt = "string"
+passedAssertions = "number"
+failedAssertions = "number"
+totalAssertions = "number"
+promptVersionRef = "string"
+
+[tables.turn-log]
+description = "A single turn in a test conversation."
+icon = "💬"
+[tables.turn-log.fields]
+runId = "string"
+turnIndex = "number"
+userMessage = "string"
+agentResponse = "string"
+responseTimeMs = "number"
+toolCallsMade = "string"
+assertionResults = "string"

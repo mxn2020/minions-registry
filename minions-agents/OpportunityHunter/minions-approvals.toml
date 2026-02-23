@@ -1,0 +1,47 @@
+# minions-approvals
+name = "minions-approvals"
+description = "Approval requests, human decisions, and immutable audit logs"
+
+[colors]
+accent = "#EF4444"
+accent-hover = "#DC2626"
+
+[tables.approval-request]
+description = "A pending action waiting for explicit human approval before execution."
+icon = "🔐"
+[tables.approval-request.fields]
+title = "string"
+description = "string"
+requestedBy = "string"
+requestedAt = "string"
+requiredBy = "string"
+contextRefType = "string"
+contextRefId = "string"
+payload = "string"
+decision = "select"
+decidedBy = "string"
+decidedAt = "string"
+decisionNotes = "string"
+
+[tables.approval-policy]
+description = "A rule defining when approval is required for a given action type."
+icon = "📜"
+[tables.approval-policy.fields]
+name = "string"
+actionType = "string"
+condition = "string"
+requiredApproverRole = "string"
+isActive = "boolean"
+
+[tables.audit-log-entry]
+description = "An immutable record of any action taken by a human or agent."
+icon = "🕵️"
+[tables.audit-log-entry.fields]
+actorId = "string"
+actorType = "select"
+action = "string"
+contextRefType = "string"
+contextRefId = "string"
+timestamp = "string"
+payload = "string"
+ipAddress = "string"

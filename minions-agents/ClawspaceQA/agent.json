@@ -1,0 +1,16 @@
+{
+  "name": "ClawspaceQA",
+  "toolboxes": [
+    "minions-qa-reports",
+    "minions-qa-rules",
+    "minions-qa-runs",
+    "minions-qa-suites"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

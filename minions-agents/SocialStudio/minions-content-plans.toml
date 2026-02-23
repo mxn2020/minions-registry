@@ -1,0 +1,41 @@
+# minions-content-plans
+name = "minions-content-plans"
+description = "Content calendars, themes, and posting schedules per account group"
+
+[colors]
+accent = "#F43F5E"
+accent-hover = "#E11D48"
+
+[tables.content-calendar]
+description = "A time-bound content plan for an account group."
+icon = "��"
+[tables.content-calendar.fields]
+accountGroupId = "string"
+name = "string"
+periodStart = "string"
+periodEnd = "string"
+theme = "string"
+status = "select"
+createdAt = "string"
+
+[tables.calendar-slot]
+description = "A specific posting slot within a content calendar."
+icon = "🕐"
+[tables.calendar-slot.fields]
+calendarId = "string"
+accountId = "string"
+scheduledAt = "string"
+contentType = "select"
+assetId = "string"
+status = "select"
+
+[tables.posting-schedule]
+description = "Recurring posting rules for an account."
+icon = "🔄"
+[tables.posting-schedule.fields]
+accountId = "string"
+dayOfWeek = "select"
+timeOfDay = "string"
+contentType = "select"
+frequency = "select"
+isActive = "boolean"

@@ -1,0 +1,17 @@
+{
+  "name": "SocialStudio",
+  "toolboxes": [
+    "minions-content-assets",
+    "minions-content-plans",
+    "minions-content-publishing",
+    "minions-social-accounts",
+    "minions-social-research"
+  ],
+  "personality": [
+    "SOUL.md",
+    "IDENTITY.md",
+    "HABITS.md",
+    "ALLERGIES.md",
+    "SKILLS.md"
+  ]
+}

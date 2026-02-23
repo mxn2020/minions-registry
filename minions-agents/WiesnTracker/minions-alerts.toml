@@ -1,0 +1,56 @@
+# minions-alerts
+name = "minions-alerts"
+description = "Alert rules, delivery preferences, and alert history for availability changes"
+
+[colors]
+accent = "#EF4444"
+accent-hover = "#DC2626"
+
+[tables.alert-rule]
+description = "A user-defined rule that triggers an alert when availability conditions are met."
+icon = "🔔"
+[tables.alert-rule.fields]
+name = "string"
+tentId = "string"
+tentAreaId = "string"
+targetDate = "string"
+targetSessionType = "select"
+triggerCondition = "select"
+isActive = "boolean"
+createdAt = "string"
+lastTriggeredAt = "string"
+
+[tables.alert-delivery]
+description = "Delivery preference for how and where alerts are sent."
+icon = "📬"
+[tables.alert-delivery.fields]
+alertRuleId = "string"
+channel = "select"
+recipientId = "string"
+recipientAddress = "string"
+priority = "select"
+cooldownMinutes = "number"
+isActive = "boolean"
+
+[tables.alert-event]
+description = "A record of an alert that was triggered and its delivery status."
+icon = "🚨"
+[tables.alert-event.fields]
+alertRuleId = "string"
+availabilityDiffId = "string"
+triggeredAt = "string"
+summary = "string"
+deliveryChannel = "select"
+deliveryStatus = "select"
+deliveredAt = "string"
+errorMessage = "string"
+
+[tables.alert-snooze]
+description = "A temporary suppression of an alert rule."
+icon = "😴"
+[tables.alert-snooze.fields]
+alertRuleId = "string"
+snoozedAt = "string"
+snoozeUntil = "string"
+reason = "string"
+snoozedBy = "string"

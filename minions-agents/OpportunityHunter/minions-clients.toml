@@ -1,0 +1,43 @@
+# minions-clients
+name = "minions-clients"
+description = "Client profiles built from job interactions, communications, and contracts"
+
+[colors]
+accent = "#F43F5E"
+accent-hover = "#E11D48"
+
+[tables.client-profile]
+description = "A client built from one or more job postings and interactions."
+icon = "🤝"
+[tables.client-profile.fields]
+personId = "string"
+organizationId = "string"
+platform = "select"
+firstSeenAt = "string"
+totalJobsPosted = "number"
+totalContractsWithMe = "number"
+averageBudget = "number"
+rating = "number"
+tags = "string"
+notes = "string"
+
+[tables.client-interaction]
+description = "A recorded touchpoint with a client across any channel."
+icon = "💬"
+[tables.client-interaction.fields]
+clientId = "string"
+type = "select"
+occurredAt = "string"
+summary = "string"
+sentiment = "select"
+threadId = "string"
+
+[tables.client-preference]
+description = "An observed or stated preference of a client used to tailor future proposals."
+icon = "🎯"
+[tables.client-preference.fields]
+clientId = "string"
+preference = "string"
+confidence = "select"
+inferredFrom = "string"
+createdAt = "string"

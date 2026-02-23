@@ -1,0 +1,43 @@
+# minions-dev-prompts
+name = "minions-dev-prompts"
+description = "Reusable prompt templates, prompt chains, and prompt versioning for agent-tasks"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.prompt-template]
+description = "A reusable prompt template for gh agent-task create calls."
+icon = "📝"
+[tables.prompt-template.fields]
+name = "string"
+description = "string"
+category = "select"
+template = "string"
+variables = "string"
+exampleOutput = "string"
+version = "number"
+isActive = "boolean"
+createdAt = "string"
+
+[tables.prompt-chain]
+description = "An ordered sequence of prompts that build on each other."
+icon = "🔗"
+[tables.prompt-chain.fields]
+name = "string"
+description = "string"
+promptTemplateIds = "string"
+executionOrder = "string"
+purpose = "string"
+status = "select"
+
+[tables.prompt-version]
+description = "A versioned snapshot of a prompt template for auditing and rollback."
+icon = "📌"
+[tables.prompt-version.fields]
+promptTemplateId = "string"
+version = "number"
+template = "string"
+changedBy = "string"
+changeNotes = "string"
+createdAt = "string"

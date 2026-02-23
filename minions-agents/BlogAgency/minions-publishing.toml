@@ -1,0 +1,52 @@
+# minions-publishing
+name = "minions-publishing"
+description = "Platform credentials, publish queue, and post receipts"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.publish-target]
+description = "A platform or CMS where articles are published."
+icon = "🎯"
+[tables.publish-target.fields]
+blogId = "string"
+platform = "select"
+name = "string"
+apiEndpoint = "string"
+authMethod = "select"
+isActive = "boolean"
+lastPublishedAt = "string"
+
+[tables.publish-queue-entry]
+description = "An article queued for publishing."
+icon = "📬"
+[tables.publish-queue-entry.fields]
+articleId = "string"
+publishTargetId = "string"
+scheduledAt = "string"
+status = "select"
+priority = "select"
+approvalRequestId = "string"
+
+[tables.publish-receipt]
+description = "Confirmation that an article was published."
+icon = "✅"
+[tables.publish-receipt.fields]
+articleId = "string"
+publishTargetId = "string"
+publishedAt = "string"
+publishedUrl = "string"
+platformPostId = "string"
+status = "select"
+
+[tables.cross-post]
+description = "A record of an article cross-posted to another platform."
+icon = "🔗"
+[tables.cross-post.fields]
+articleId = "string"
+originalReceiptId = "string"
+targetPlatform = "select"
+publishedUrl = "string"
+publishedAt = "string"
+status = "select"

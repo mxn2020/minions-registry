@@ -1,0 +1,59 @@
+# minions-jobs
+name = "minions-jobs"
+description = "Canonical schemas for job postings and extracted signals across freelance platforms"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.job-source]
+description = "A configured platform or feed to crawl for job postings."
+icon = "🔌"
+[tables.job-source.fields]
+platform = "select"
+searchQuery = "string"
+filters = "string"
+crawlPolicy = "select"
+authMode = "select"
+isActive = "boolean"
+lastCrawledAt = "string"
+
+[tables.job-posting]
+description = "A normalized job posting from any freelance platform."
+icon = "💼"
+[tables.job-posting.fields]
+sourceId = "string"
+platform = "select"
+url = "string"
+title = "string"
+description = "string"
+budgetType = "select"
+budgetAmount = "number"
+budgetCurrency = "string"
+skills = "string"
+clientCountry = "string"
+postedAt = "string"
+crawledAt = "string"
+status = "select"
+
+[tables.job-signal]
+description = "Extracted structured intelligence from a raw job posting."
+icon = "📡"
+[tables.job-signal.fields]
+jobId = "string"
+mustHaveSkills = "string"
+niceToHaveSkills = "string"
+redFlags = "string"
+estimatedWinProbability = "number"
+extractedBudgetConfidence = "select"
+
+[tables.job-watchlist]
+description = "A saved search query that continuously monitors for new matching jobs."
+icon = "👀"
+[tables.job-watchlist.fields]
+name = "string"
+sourceId = "string"
+query = "string"
+filters = "string"
+isActive = "boolean"
+lastMatchedAt = "string"

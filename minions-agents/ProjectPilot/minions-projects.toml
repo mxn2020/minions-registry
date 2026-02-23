@@ -1,0 +1,35 @@
+# minions-projects
+name = "minions-projects"
+description = "Project definitions, variants, goals, status, and ownership"
+
+[colors]
+accent = "#0EA5E9"
+accent-hover = "#0284C7"
+
+[tables.project]
+description = "A project with its variant, goals, and current status."
+icon = "🏗️"
+[tables.project.fields]
+name = "string"
+description = "string"
+variant = "select"
+status = "select"
+ownerId = "string"
+goals = "string"
+startDate = "string"
+targetEndDate = "string"
+completedAt = "string"
+tags = "string"
+
+[tables.project-summary]
+description = "A periodic summary of project health and progress."
+icon = "📊"
+[tables.project-summary.fields]
+projectId = "string"
+periodStart = "string"
+periodEnd = "string"
+health = "select"
+completionPercent = "number"
+blockers = "string"
+highlights = "string"
+generatedAt = "string"

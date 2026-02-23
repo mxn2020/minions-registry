@@ -1,0 +1,33 @@
+# minions-oss-ideas
+name = "minions-oss-ideas"
+description = "Idea brainstorms, feasibility scores, tech stack picks, and market gaps"
+
+[colors]
+accent = "#F97316"
+accent-hover = "#EA580C"
+
+[tables.oss-idea]
+description = "A brainstormed open-source project idea."
+icon = "💡"
+[tables.oss-idea.fields]
+title = "string"
+description = "string"
+problemStatement = "string"
+targetAudience = "string"
+marketGap = "string"
+feasibilityScore = "number"
+noveltyScore = "number"
+techStack = "string"
+status = "select"
+createdAt = "string"
+
+[tables.idea-evaluation]
+description = "A structured evaluation of an OSS idea."
+icon = "📊"
+[tables.idea-evaluation.fields]
+ideaId = "string"
+criterion = "string"
+score = "number"
+reasoning = "string"
+evaluatedBy = "string"
+evaluatedAt = "string"

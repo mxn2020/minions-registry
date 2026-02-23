@@ -1,0 +1,54 @@
+# minions-repos
+name = "minions-repos"
+description = "GitHub repo definitions, workflow templates, label sets, and branch protection rules"
+
+[colors]
+accent = "#2563EB"
+accent-hover = "#1D4ED8"
+
+[tables.repo-definition]
+description = "A GitHub repository to be created and configured."
+icon = "📦"
+[tables.repo-definition.fields]
+name = "string"
+description = "string"
+visibility = "select"
+defaultBranch = "string"
+template = "string"
+org = "string"
+status = "select"
+createdAt = "string"
+repoUrl = "string"
+
+[tables.workflow-template]
+description = "A reusable GitHub Actions workflow template."
+icon = "⚙️"
+[tables.workflow-template.fields]
+name = "string"
+description = "string"
+filename = "string"
+content = "string"
+triggerEvents = "string"
+isDefault = "boolean"
+version = "string"
+
+[tables.label-set]
+description = "A curated set of GitHub issue/PR labels."
+icon = "🏷️"
+[tables.label-set.fields]
+name = "string"
+labels = "string"
+isDefault = "boolean"
+
+[tables.branch-rule]
+description = "Branch protection and merge rules for a repository."
+icon = "🔒"
+[tables.branch-rule.fields]
+repoDefinitionId = "string"
+branch = "string"
+requireReviews = "boolean"
+requiredReviewers = "number"
+requireStatusChecks = "boolean"
+statusChecks = "string"
+allowForcePush = "boolean"
+isActive = "boolean"

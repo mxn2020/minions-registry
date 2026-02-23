@@ -1,0 +1,34 @@
+# minions-risks
+name = "minions-risks"
+description = "Risk register, likelihood, impact, and mitigation plans"
+
+[colors]
+accent = "#EF4444"
+accent-hover = "#DC2626"
+
+[tables.risk]
+description = "An identified project risk."
+icon = "⚠️"
+[tables.risk.fields]
+projectId = "string"
+title = "string"
+description = "string"
+likelihood = "select"
+impact = "select"
+riskScore = "number"
+status = "select"
+mitigationPlan = "string"
+ownerId = "string"
+identifiedAt = "string"
+resolvedAt = "string"
+
+[tables.risk-update]
+description = "A status update on a tracked risk."
+icon = "📝"
+[tables.risk-update.fields]
+riskId = "string"
+updatedAt = "string"
+newLikelihood = "select"
+newImpact = "select"
+notes = "string"
+updatedBy = "string"

@@ -1,0 +1,59 @@
+# minions-qa-suites
+name = "minions-qa-suites"
+description = "Test suite definitions, test cases, and assertions for validating clawspace toolboxes"
+
+[colors]
+accent = "#6366F1"
+accent-hover = "#4F46E5"
+
+[tables.test-suite]
+description = "A suite of tests targeting a specific clawspace or toolbox."
+icon = "🧪"
+[tables.test-suite.fields]
+name = "string"
+clawspace = "string"
+toolboxId = "string"
+description = "string"
+testCaseIds = "string"
+schedule = "select"
+isActive = "boolean"
+lastRunAt = "string"
+createdAt = "string"
+
+[tables.test-case]
+description = "A single test with expected behavior and assertion rules."
+icon = "✅"
+[tables.test-case.fields]
+suiteId = "string"
+name = "string"
+category = "select"
+description = "string"
+command = "string"
+expectedOutcome = "string"
+assertions = "string"
+timeout = "number"
+severity = "select"
+isActive = "boolean"
+
+[tables.assertion-rule]
+description = "A reusable assertion that can be applied across test cases."
+icon = "📏"
+[tables.assertion-rule.fields]
+name = "string"
+type = "select"
+condition = "string"
+expectedValue = "string"
+errorMessage = "string"
+isActive = "boolean"
+
+[tables.clawspace-manifest]
+description = "A registered clawspace with its toolboxes, expected structure, and health baseline."
+icon = "📋"
+[tables.clawspace-manifest.fields]
+clawspaceName = "string"
+clawspaceId = "string"
+toolboxNames = "string"
+expectedToolboxCount = "number"
+expectedFilePatterns = "string"
+healthBaseline = "string"
+lastValidatedAt = "string"

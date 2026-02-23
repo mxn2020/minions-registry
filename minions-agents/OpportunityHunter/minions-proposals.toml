@@ -1,0 +1,57 @@
+# minions-proposals
+name = "minions-proposals"
+description = "Proposal drafts, answer sets, scoring, and prompt version references"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.proposal-template]
+description = "A reusable proposal scaffold for a specific platform and style."
+icon = "🖨️"
+[tables.proposal-template.fields]
+name = "string"
+platform = "select"
+style = "select"
+body = "string"
+placeholders = "string"
+promptVersionRef = "string"
+isActive = "boolean"
+
+[tables.proposal-draft]
+description = "A generated proposal for a specific job, with scoring and status."
+icon = "✍️"
+[tables.proposal-draft.fields]
+jobId = "string"
+templateId = "string"
+version = "number"
+body = "string"
+answerSet = "string"
+promptVersionRef = "string"
+clarityScore = "number"
+relevanceScore = "number"
+specificityScore = "number"
+complianceScore = "number"
+status = "select"
+createdAt = "string"
+revisedAt = "string"
+
+[tables.proposal-revision]
+description = "A previous version of a proposal draft saved before revision."
+icon = "📜"
+[tables.proposal-revision.fields]
+proposalId = "string"
+version = "number"
+body = "string"
+savedAt = "string"
+changeReason = "string"
+
+[tables.answer-set]
+description = "A set of platform screening question answers for a specific proposal."
+icon = "❓"
+[tables.answer-set.fields]
+proposalId = "string"
+jobId = "string"
+questions = "string"
+answers = "string"
+generatedAt = "string"

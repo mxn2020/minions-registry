@@ -1,0 +1,36 @@
+# minions-leads
+name = "minions-leads"
+description = "Lead records, company profiles, contact details, and qualification status"
+
+[colors]
+accent = "#EC4899"
+accent-hover = "#DB2777"
+
+[tables.lead]
+description = "A discovered potential client."
+icon = "🎯"
+[tables.lead.fields]
+companyName = "string"
+website = "string"
+industry = "string"
+territoryId = "string"
+contactName = "string"
+contactEmail = "string"
+contactPhone = "string"
+leadScore = "number"
+qualificationStatus = "select"
+status = "select"
+discoveredAt = "string"
+source = "string"
+
+[tables.lead-enrichment]
+description = "Additional data gathered about a lead."
+icon = "📋"
+[tables.lead-enrichment.fields]
+leadId = "string"
+companySize = "select"
+revenue = "string"
+techStack = "string"
+socialProfiles = "string"
+enrichedAt = "string"
+enrichedBy = "string"

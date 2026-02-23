@@ -1,0 +1,48 @@
+# minions-qa-runs
+name = "minions-qa-runs"
+description = "Test execution records, assertion results, and pass/fail tracking across clawspaces"
+
+[colors]
+accent = "#22C55E"
+accent-hover = "#16A34A"
+
+[tables.qa-run]
+description = "An execution of a test suite against a clawspace or toolbox."
+icon = "▶️"
+[tables.qa-run.fields]
+suiteId = "string"
+clawspace = "string"
+toolboxId = "string"
+status = "select"
+startedAt = "string"
+completedAt = "string"
+totalTests = "number"
+passed = "number"
+failed = "number"
+skipped = "number"
+durationMs = "number"
+triggeredBy = "select"
+
+[tables.test-result]
+description = "The result of a single test case within a QA run."
+icon = "📊"
+[tables.test-result.fields]
+runId = "string"
+testCaseId = "string"
+status = "select"
+actualOutcome = "string"
+errorMessage = "string"
+durationMs = "number"
+stdout = "string"
+stderr = "string"
+
+[tables.assertion-result]
+description = "The result of a single assertion within a test result."
+icon = "🔍"
+[tables.assertion-result.fields]
+testResultId = "string"
+assertionRuleId = "string"
+passed = "boolean"
+actualValue = "string"
+expectedValue = "string"
+errorDetail = "string"

@@ -1,0 +1,39 @@
+# minions-notes
+name = "minions-notes"
+description = "Freeform annotations and observations attachable to any Minion"
+
+[colors]
+accent = "#F59E0B"
+accent-hover = "#D97706"
+
+[tables.note]
+description = "A freeform annotation attached to any Minion."
+icon = "📝"
+[tables.note.fields]
+title = "string"
+body = "string"
+authorId = "string"
+authorType = "select"
+createdAt = "string"
+updatedAt = "string"
+contextRefType = "string"
+contextRefId = "string"
+tags = "string"
+pinned = "boolean"
+
+[tables.note-revision]
+description = "A saved previous version of a note body."
+icon = "📜"
+[tables.note-revision.fields]
+noteId = "string"
+body = "string"
+savedAt = "string"
+savedBy = "string"
+
+[tables.note-link]
+description = "A named connection between two notes."
+icon = "🔗"
+[tables.note-link.fields]
+fromNoteId = "string"
+toNoteId = "string"
+relation = "string"

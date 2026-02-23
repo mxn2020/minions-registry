@@ -1,0 +1,43 @@
+# minions-scaffolds
+name = "minions-scaffolds"
+description = "Project scaffolding templates, tech stack configs, and initial file sets"
+
+[colors]
+accent = "#10B981"
+accent-hover = "#059669"
+
+[tables.scaffold-template]
+description = "A project scaffolding template with its tech stack and file structure."
+icon = "🏗️"
+[tables.scaffold-template.fields]
+name = "string"
+description = "string"
+techStack = "string"
+framework = "string"
+language = "string"
+packageManager = "select"
+initCommand = "string"
+postInitSteps = "string"
+version = "string"
+status = "select"
+
+[tables.tech-stack-config]
+description = "Tech stack choices and dependency versions for a scaffold."
+icon = "⚡"
+[tables.tech-stack-config.fields]
+scaffoldTemplateId = "string"
+category = "select"
+name = "string"
+version = "string"
+purpose = "string"
+isRequired = "boolean"
+
+[tables.initial-file]
+description = "A file to be included in every scaffolded project."
+icon = "📄"
+[tables.initial-file.fields]
+scaffoldTemplateId = "string"
+path = "string"
+content = "string"
+isTemplate = "boolean"
+templateVariables = "string"

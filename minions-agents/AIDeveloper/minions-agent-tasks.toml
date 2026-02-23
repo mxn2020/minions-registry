@@ -1,0 +1,50 @@
+# minions-agent-tasks
+name = "minions-agent-tasks"
+description = "gh agent-task prompts, execution tracking, PR references, and review status"
+
+[colors]
+accent = "#8B5CF6"
+accent-hover = "#7C3AED"
+
+[tables.agent-task]
+description = "A task submitted to gh agent-task create for autonomous implementation."
+icon = "🤖"
+[tables.agent-task.fields]
+repoDefinitionId = "string"
+title = "string"
+prompt = "string"
+promptTemplateId = "string"
+branch = "string"
+prNumber = "number"
+prUrl = "string"
+status = "select"
+submittedAt = "string"
+completedAt = "string"
+reviewStatus = "select"
+mergedAt = "string"
+
+[tables.task-batch]
+description = "A batch of related agent-tasks to implement a feature set."
+icon = "📋"
+[tables.task-batch.fields]
+name = "string"
+description = "string"
+repoDefinitionId = "string"
+taskIds = "string"
+executionOrder = "string"
+status = "select"
+createdAt = "string"
+
+[tables.task-result]
+description = "The outcome of a completed agent-task with quality assessment."
+icon = "✅"
+[tables.task-result.fields]
+agentTaskId = "string"
+filesChanged = "number"
+linesAdded = "number"
+linesRemoved = "number"
+testsAdded = "number"
+buildPassing = "boolean"
+qualityNotes = "string"
+reviewedAt = "string"
+reviewedBy = "string"

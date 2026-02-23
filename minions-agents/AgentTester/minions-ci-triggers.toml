@@ -1,0 +1,29 @@
+# minions-ci-triggers
+name = "minions-ci-triggers"
+description = "Code/prompt change listeners, CI/CD hooks, and regression gate definitions"
+
+[colors]
+accent = "#14B8A6"
+accent-hover = "#0D9488"
+
+[tables.ci-trigger]
+description = "A configured trigger for automated test execution."
+icon = "🔗"
+[tables.ci-trigger.fields]
+name = "string"
+triggerType = "select"
+watchPath = "string"
+targetId = "string"
+scenarioIds = "string"
+isActive = "boolean"
+
+[tables.regression-gate]
+description = "A quality gate that blocks deployment on regression."
+icon = "🚧"
+[tables.regression-gate.fields]
+name = "string"
+triggerId = "string"
+metricName = "string"
+threshold = "number"
+action = "select"
+isActive = "boolean"

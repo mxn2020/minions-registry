@@ -1,0 +1,30 @@
+# minions-component-evals
+name = "minions-component-evals"
+description = "Pipeline-level benchmarks for RAG, routing, and classification"
+
+[colors]
+accent = "#0EA5E9"
+accent-hover = "#0284C7"
+
+[tables.component-benchmark]
+description = "A benchmark definition for a pipeline component."
+icon = "⚡"
+[tables.component-benchmark.fields]
+name = "string"
+componentType = "select"
+targetId = "string"
+datasetId = "string"
+metrics = "string"
+threshold = "number"
+status = "select"
+
+[tables.benchmark-result]
+description = "A result from running a component benchmark."
+icon = "📈"
+[tables.benchmark-result.fields]
+benchmarkId = "string"
+score = "number"
+metricBreakdown = "string"
+isPassing = "boolean"
+runAt = "string"
+promptVersionRef = "string"

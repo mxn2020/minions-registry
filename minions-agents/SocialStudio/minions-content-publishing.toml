@@ -1,0 +1,40 @@
+# minions-content-publishing
+name = "minions-content-publishing"
+description = "Publish queue, delivery receipts, and mode configuration"
+
+[colors]
+accent = "#14B8A6"
+accent-hover = "#0D9488"
+
+[tables.publish-job]
+description = "A job to publish content to a social platform."
+icon = "📤"
+[tables.publish-job.fields]
+assetBundleId = "string"
+accountId = "string"
+scheduledAt = "string"
+status = "select"
+approvalRequestId = "string"
+priority = "select"
+
+[tables.delivery-receipt]
+description = "Confirmation that content was posted to a platform."
+icon = "✅"
+[tables.delivery-receipt.fields]
+publishJobId = "string"
+accountId = "string"
+publishedAt = "string"
+platformPostId = "string"
+platformUrl = "string"
+status = "select"
+
+[tables.engagement-snapshot]
+description = "Post-publish engagement metrics."
+icon = "📊"
+[tables.engagement-snapshot.fields]
+deliveryReceiptId = "string"
+likes = "number"
+comments = "number"
+shares = "number"
+views = "number"
+capturedAt = "string"

@@ -1,0 +1,31 @@
+# minions-oss-quality
+name = "minions-oss-quality"
+description = "Linting rules, test coverage targets, usability checklists, and release gates"
+
+[colors]
+accent = "#EF4444"
+accent-hover = "#DC2626"
+
+[tables.quality-gate]
+description = "A quality check that must pass before release."
+icon = "🚦"
+[tables.quality-gate.fields]
+projectId = "string"
+name = "string"
+type = "select"
+threshold = "number"
+currentValue = "number"
+isPassing = "boolean"
+lastCheckedAt = "string"
+
+[tables.quality-report]
+description = "A quality assessment of a project snapshot."
+icon = "📋"
+[tables.quality-report.fields]
+projectId = "string"
+testCoverage = "number"
+lintErrors = "number"
+buildPassing = "boolean"
+usabilityScore = "number"
+overallGrade = "select"
+generatedAt = "string"

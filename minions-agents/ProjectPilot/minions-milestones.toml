@@ -1,0 +1,30 @@
+# minions-milestones
+name = "minions-milestones"
+description = "Milestone definitions, dependencies, and completion criteria"
+
+[colors]
+accent = "#6366F1"
+accent-hover = "#4F46E5"
+
+[tables.milestone]
+description = "A major checkpoint in a project."
+icon = "🏁"
+[tables.milestone.fields]
+projectId = "string"
+name = "string"
+description = "string"
+dueAt = "string"
+completedAt = "string"
+status = "select"
+completionCriteria = "string"
+dependsOnMilestoneIds = "string"
+
+[tables.milestone-check]
+description = "A periodic health check on a milestone."
+icon = "✅"
+[tables.milestone-check.fields]
+milestoneId = "string"
+checkedAt = "string"
+onTrack = "boolean"
+blockers = "string"
+notes = "string"
