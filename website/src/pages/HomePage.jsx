@@ -33,6 +33,10 @@ export default function HomePage() {
                 <SearchBar />
                 <div className="hero-stats">
                     <div className="hero-stat">
+                        <div className="hero-stat-value">{data.totalAgents || 0}</div>
+                        <div className="hero-stat-label">AI Agents</div>
+                    </div>
+                    <div className="hero-stat">
                         <div className="hero-stat-value">{data.totalSkills}</div>
                         <div className="hero-stat-label">Toolboxes</div>
                     </div>

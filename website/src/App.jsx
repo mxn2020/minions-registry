@@ -5,6 +5,8 @@ import CategoryPage from './pages/CategoryPage';
 import SkillPage from './pages/SkillPage';
 import AllSkillsPage from './pages/AllSkillsPage';
 import BlogPage from './pages/BlogPage';
+import AgentsPage from './pages/AgentsPage';
+import AgentDetailPage from './pages/AgentDetailPage';
 import SearchBar from './components/SearchBar';
 
 export const SkillsContext = createContext(null);
@@ -25,6 +27,7 @@ function Navbar() {
           <Link to="/" className="navbar-link">Home</Link>
           <Link to="/blog" className="navbar-link">Blog</Link>
           <Link to="/skills" className="navbar-link">All Minions</Link>
+          <Link to="/agents" className="navbar-link">AI Agents</Link>
           <a
             href="https://the-mehdi.com"
             target="_blank"
@@ -105,6 +108,8 @@ function AppContent() {
           <Route path="/category/:slug/:subSlug" element={<CategoryPage />} />
           <Route path="/skill/*" element={<SkillPage />} />
           <Route path="/skills" element={<AllSkillsPage />} />
+          <Route path="/agents" element={<AgentsPage />} />
+          <Route path="/agent/:slug" element={<AgentDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPage />} />
         </Routes>
@@ -118,9 +123,17 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}skills-index.json`)
-      .then(r => r.json())
-      .then(setData)
+    Promise.all([
+      fetch(`${import.meta.env.BASE_URL}skills-index.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}agents-index.json`).then(r => r.json())
+    ])
+      .then(([skillsData, agentsData]) => {
+        setData({
+          ...skillsData,
+          agents: agentsData.agents,
+          totalAgents: agentsData.totalAgents
+        });
+      })
       .catch(console.error);
   }, []);
 

@@ -39,7 +39,9 @@ export default function CategoryPage() {
     if (!data) {
         return (
             <div className="page-container">
-                <div style={{ padding: '80px 0', textAlign: 'center' }}>Loading...</div>
+                <div className="hero">
+                    <div className="hero-badge">⏳ Loading...</div>
+                </div>
             </div>
         );
     }
