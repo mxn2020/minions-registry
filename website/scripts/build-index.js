@@ -16,8 +16,10 @@ import { globSync } from 'glob';
 const REPO_ROOT = path.resolve(import.meta.dirname, '..', '..');
 const OUT_FILE = path.resolve(import.meta.dirname, '..', 'public', 'skills-index.json');
 const AGENTS_OUT_FILE = path.resolve(import.meta.dirname, '..', 'public', 'agents-index.json');
+const BUNDLES_OUT_FILE = path.resolve(import.meta.dirname, '..', 'public', 'bundles-index.json');
 
 // Directories to skip
+
 const IGNORE = new Set(['.git', '.claude', 'node_modules', 'website', 'examples']);
 
 function slugToTitle(slug) {
@@ -202,5 +204,58 @@ function buildAgentsIndex() {
   console.log(`   → ${AGENTS_OUT_FILE}`);
 }
 
+function buildBundlesIndex() {
+  const bundlesDir = path.join(REPO_ROOT, '..', 'minionsBundles');
+  if (!fs.existsSync(bundlesDir)) {
+    console.log('No bundles directory found, skipping.');
+    return;
+  }
+
+  const items = fs.readdirSync(bundlesDir);
+  const bundles = [];
+
+  for (const item of items) {
+    if (!item.startsWith('minions-bundles-')) continue;
+    const fullPath = path.join(bundlesDir, item);
+    if (!fs.statSync(fullPath).isDirectory()) continue;
+
+    const pkgJsonPath = path.join(fullPath, 'package.json');
+    if (!fs.existsSync(pkgJsonPath)) continue;
+
+    const pkg = JSON.parse(fs.readFileSync(pkgJsonPath, 'utf-8'));
+
+    const readmePath = path.join(fullPath, 'README.md');
+    const readme = fs.existsSync(readmePath) ? fs.readFileSync(readmePath, 'utf-8').trim() : '';
+
+    const skillsPath = path.join(fullPath, 'SKILLS.md');
+    const skills = fs.existsSync(skillsPath) ? fs.readFileSync(skillsPath, 'utf-8').trim() : '';
+
+    bundles.push({
+      slug: item.replace('minions-bundles-', '').toLowerCase(),
+      name: item,
+      description: pkg.description || '',
+      version: pkg.version || '0.1.0',
+      readme,
+      skills
+    });
+  }
+
+  bundles.sort((a, b) => a.name.localeCompare(b.name));
+
+  const index = {
+    bundles,
+    totalBundles: bundles.length,
+    generatedAt: new Date().toISOString()
+  };
+
+  const outDir = path.dirname(BUNDLES_OUT_FILE);
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+
+  fs.writeFileSync(BUNDLES_OUT_FILE, JSON.stringify(index, null, 2));
+  console.log(`✅ Built bundles index: ${bundles.length} bundles`);
+  console.log(`   → ${BUNDLES_OUT_FILE}`);
+}
+
 buildIndex();
 buildAgentsIndex();
+buildBundlesIndex();

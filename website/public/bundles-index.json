@@ -1,0 +1,38 @@
+{
+  "bundles": [
+    {
+      "slug": "content",
+      "name": "minions-bundles-content",
+      "description": "Content pipeline bundle — drafts, publications, channels, campaigns",
+      "version": "0.1.0",
+      "readme": "# Minions Bundle: Content\n\nContent pipeline bundle — drafts, publications, channels, campaigns\n\nThis is a Minions ecosystem **bundle**. Bundles are curated assemblies of MinionTypes, relations, and views designed for a specific domain.\n\n## Installation\n\n\\`\\`\\`bash\nnpm install minions-bundles-content\n# or\npnpm add minions-bundles-content\n# or\nyarn add minions-bundles-content\n\\`\\`\\`\n\n## Usage\n\n\\`\\`\\`typescript\nimport { bundleTypes, bundleRelations, bundleViews } from 'minions-bundles-content';\nimport { Minions } from 'minions-sdk';\n\n// Initialize a client with this bundle's types and relations\nconst core = new Minions();\n\nfor (const type of bundleTypes) {\n    core.registry.register(type);\n}\n\n// Ensure relations exist\nfor (const rel of bundleRelations) {\n    // Implement relation registration logic here if applicable\n}\n\\`\\`\\`\n\n## AI Agent Skills\n\nSee [SKILLS.md](./SKILLS.md) for instructions on how AI agents should interact with this bundle's schema.\n\n## License\n\nMIT - Copyright (c) 2026 Mehdi Nabhani",
+      "skills": "---\nname: minions-bundles-content\ndescription: \"Agent skills and schema rules for Minions Bundle: Content.\"\ncategory: custom\ntags: [\"bundle\"]\n---\n\n# Minions Bundle: Content Agent Skills\n\n## Your Context\n\nYou manage a content creation and publication pipeline.\n\nYour MinionTypes are: author, contentBrief, draft, publishedPiece, channel, campaign.\n\n## Hard Rules\n\n- Drafts must be linked to a brief\n- A draft cannot be marked approved without a word count > 0"
+    },
+    {
+      "slug": "crm",
+      "name": "minions-bundles-crm",
+      "description": "CRM pipeline bundle — leads, deals, interactions, sequences",
+      "version": "0.1.0",
+      "readme": "# Minions Bundle: Crm\n\nCRM pipeline bundle — leads, deals, interactions, sequences\n\nThis is a Minions ecosystem **bundle**. Bundles are curated assemblies of MinionTypes, relations, and views designed for a specific domain.\n\n## Installation\n\n\\`\\`\\`bash\nnpm install minions-bundles-crm\n# or\npnpm add minions-bundles-crm\n# or\nyarn add minions-bundles-crm\n\\`\\`\\`\n\n## Usage\n\n\\`\\`\\`typescript\nimport { bundleTypes, bundleRelations, bundleViews } from 'minions-bundles-crm';\nimport { Minions } from 'minions-sdk';\n\n// Initialize a client with this bundle's types and relations\nconst core = new Minions();\n\nfor (const type of bundleTypes) {\n    core.registry.register(type);\n}\n\n// Ensure relations exist\nfor (const rel of bundleRelations) {\n    // Implement relation registration logic here if applicable\n}\n\\`\\`\\`\n\n## AI Agent Skills\n\nSee [SKILLS.md](./SKILLS.md) for instructions on how AI agents should interact with this bundle's schema.\n\n## License\n\nMIT - Copyright (c) 2026 Mehdi Nabhani",
+      "skills": "---\nname: minions-bundles-crm\ndescription: \"Agent skills and schema rules for Minions Bundle: Crm.\"\ncategory: custom\ntags: [\"bundle\"]\n---\n\n# Minions Bundle: Crm Agent Skills\n\n## Your Context\n\nYou manage relationship and pipeline data.\n\nYour MinionTypes are: person, organization, lead, deal, interaction.\n\n## Hard Rules\n\n- Never update a deal stage without logging a decision\n- Never send outreach without an approved approval-request"
+    },
+    {
+      "slug": "finance",
+      "name": "minions-bundles-finance",
+      "description": "Financial tracking bundle — budgets, expenses, invoices",
+      "version": "0.1.0",
+      "readme": "# Minions Bundle: Finance\n\nFinancial tracking bundle — budgets, expenses, invoices\n\nThis is a Minions ecosystem **bundle**. Bundles are curated assemblies of MinionTypes, relations, and views designed for a specific domain.\n\n## Installation\n\n\\`\\`\\`bash\nnpm install minions-bundles-finance\n# or\npnpm add minions-bundles-finance\n# or\nyarn add minions-bundles-finance\n\\`\\`\\`\n\n## Usage\n\n\\`\\`\\`typescript\nimport { bundleTypes, bundleRelations, bundleViews } from 'minions-bundles-finance';\nimport { Minions } from 'minions-sdk';\n\n// Initialize a client with this bundle's types and relations\nconst core = new Minions();\n\nfor (const type of bundleTypes) {\n    core.registry.register(type);\n}\n\n// Ensure relations exist\nfor (const rel of bundleRelations) {\n    // Implement relation registration logic here if applicable\n}\n\\`\\`\\`\n\n## AI Agent Skills\n\nSee [SKILLS.md](./SKILLS.md) for instructions on how AI agents should interact with this bundle's schema.\n\n## License\n\nMIT - Copyright (c) 2026 Mehdi Nabhani",
+      "skills": "---\nname: minions-bundles-finance\ndescription: \"Agent skills and schema rules for Minions Bundle: Finance.\"\ncategory: custom\ntags: [\"bundle\"]\n---\n\n# Minions Bundle: Finance Agent Skills\n\n## Your Context\n\nYou track expenses, budgets, and client invoicing.\n\nYour MinionTypes are: client, budget, expense, invoice, paymentRecord.\n\n## Hard Rules\n\n- Expenses must always indicate the correct currency\n- Payments cannot exceed the total invoice amount"
+    },
+    {
+      "slug": "knowledge",
+      "name": "minions-bundles-knowledge",
+      "description": "Knowledge management bundle — documents, concepts, citations",
+      "version": "0.1.0",
+      "readme": "# Minions Bundle: Knowledge\n\nKnowledge management bundle — documents, concepts, citations\n\nThis is a Minions ecosystem **bundle**. Bundles are curated assemblies of MinionTypes, relations, and views designed for a specific domain.\n\n## Installation\n\n\\`\\`\\`bash\nnpm install minions-bundles-knowledge\n# or\npnpm add minions-bundles-knowledge\n# or\nyarn add minions-bundles-knowledge\n\\`\\`\\`\n\n## Usage\n\n\\`\\`\\`typescript\nimport { bundleTypes, bundleRelations, bundleViews } from 'minions-bundles-knowledge';\nimport { Minions } from 'minions-sdk';\n\n// Initialize a client with this bundle's types and relations\nconst core = new Minions();\n\nfor (const type of bundleTypes) {\n    core.registry.register(type);\n}\n\n// Ensure relations exist\nfor (const rel of bundleRelations) {\n    // Implement relation registration logic here if applicable\n}\n\\`\\`\\`\n\n## AI Agent Skills\n\nSee [SKILLS.md](./SKILLS.md) for instructions on how AI agents should interact with this bundle's schema.\n\n## License\n\nMIT - Copyright (c) 2026 Mehdi Nabhani",
+      "skills": "---\nname: minions-bundles-knowledge\ndescription: \"Agent skills and schema rules for Minions Bundle: Knowledge.\"\ncategory: custom\ntags: [\"bundle\"]\n---\n\n# Minions Bundle: Knowledge Agent Skills\n\n## Your Context\n\nYou relate discrete atoms of knowledge to source documents.\n\nYour MinionTypes are: concept, document, researchNote, citation.\n\n## Hard Rules\n\n- When creating a research note, always link it to at least one concept\n- Always create citations to back up research notes if a source document exists"
+    }
+  ],
+  "totalBundles": 4,
+  "generatedAt": "2026-02-24T16:22:44.755Z"
+}

@@ -7,6 +7,7 @@ import AllSkillsPage from './pages/AllSkillsPage';
 import BlogPage from './pages/BlogPage';
 import AgentsPage from './pages/AgentsPage';
 import AgentDetailPage from './pages/AgentDetailPage';
+import BundlesPage from './pages/BundlesPage';
 import SearchBar from './components/SearchBar';
 
 export const SkillsContext = createContext(null);
@@ -28,6 +29,7 @@ function Navbar() {
           <Link to="/blog" className="navbar-link">Blog</Link>
           <Link to="/skills" className="navbar-link">All Minions</Link>
           <Link to="/agents" className="navbar-link">AI Agents</Link>
+          <Link to="/bundles" className="navbar-link">Bundles</Link>
           <a
             href="https://the-mehdi.com"
             target="_blank"
@@ -110,6 +112,7 @@ function AppContent() {
           <Route path="/skills" element={<AllSkillsPage />} />
           <Route path="/agents" element={<AgentsPage />} />
           <Route path="/agent/:slug" element={<AgentDetailPage />} />
+          <Route path="/bundles" element={<BundlesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPage />} />
         </Routes>
@@ -125,13 +128,16 @@ function App() {
   useEffect(() => {
     Promise.all([
       fetch(`${import.meta.env.BASE_URL}skills-index.json`).then(r => r.json()),
-      fetch(`${import.meta.env.BASE_URL}agents-index.json`).then(r => r.json())
+      fetch(`${import.meta.env.BASE_URL}agents-index.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}bundles-index.json`).then(r => r.json().catch(() => ({ bundles: [], totalBundles: 0 })))
     ])
-      .then(([skillsData, agentsData]) => {
+      .then(([skillsData, agentsData, bundlesData]) => {
         setData({
           ...skillsData,
           agents: agentsData.agents,
-          totalAgents: agentsData.totalAgents
+          totalAgents: agentsData.totalAgents,
+          bundles: bundlesData.bundles,
+          totalBundles: bundlesData.totalBundles
         });
       })
       .catch(console.error);

@@ -21,13 +21,13 @@ export default function HomePage() {
             <section className="hero animate-in">
                 <div className="hero-badge">🚀 Minion Toolboxes</div>
                 <h1>
-                    Discover Minions
+                    The Minions
                 </h1>
                 <h1>
-                    <span className="gradient-text">Ecosystem Toolboxes</span>
+                    <span className="gradient-text">Ecosystem Registry</span>
                 </h1>
                 <p className="hero-subtitle">
-                    A curated directory of {data.totalSkills} production-ready toolboxes for AI agents.
+                    Discover reusable toolboxes built on the Minions object system. A curated directory of {data.totalSkills} production-ready toolboxes for AI agents.
                     Browse, search, and integrate — powerup your agents.
                 </p>
                 <SearchBar />
