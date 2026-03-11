@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSkills } from '../App';
+import { Input } from '@geenius-ui/react-css';
 
 export default function SearchBar() {
     const data = useSkills();
@@ -74,7 +75,7 @@ export default function SearchBar() {
         <div className="search-container" ref={wrapperRef}>
             <div className="search-wrapper">
                 <span className="search-icon">🔍</span>
-                <input
+                <Input
                     type="text"
                     className="search-input"
                     placeholder="Search skills by name, description, or ID..."

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useSkills } from '../App';
+import { Button } from '@geenius-ui/react-css';
 
 export default function AgentDetailPage() {
     const params = useParams();
@@ -95,7 +96,7 @@ export default function AgentDetailPage() {
                         {tabs.length > 0 && (
                             <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid var(--border-medium)', paddingBottom: '12px', overflowX: 'auto' }}>
                                 {tabs.map(tab => (
-                                    <button
+                                    <Button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         style={{
@@ -110,7 +111,7 @@ export default function AgentDetailPage() {
                                         }}
                                     >
                                         {tab.label}
-                                    </button>
+                                    </Button>
                                 ))}
                             </div>
                         )}

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useSkills } from '../App';
+import { Button } from '@geenius-ui/react-css';
 
 // Sample blog posts - stored as data so adding new posts is easy
 // In the future, these could be loaded from markdown files via a build script
@@ -223,20 +224,20 @@ function BlogList() {
 
             {/* Tags filter */}
             <div className="blog-tags animate-in animate-in-delay-1">
-                <button
+                <Button
                     className={`blog-tag ${!selectedTag ? 'active' : ''}`}
                     onClick={() => setSelectedTag(null)}
                 >
                     All
-                </button>
+                </Button>
                 {allTags.map(tag => (
-                    <button
+                    <Button
                         key={tag}
                         className={`blog-tag ${selectedTag === tag ? 'active' : ''}`}
                         onClick={() => setSelectedTag(tag)}
                     >
                         {tag}
-                    </button>
+                    </Button>
                 ))}
             </div>
 

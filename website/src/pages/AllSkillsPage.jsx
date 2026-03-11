@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSkills } from '../App';
+import { Input } from '@geenius-ui/react-css';
 
 export default function AllSkillsPage() {
     const data = useSkills();
@@ -67,7 +68,7 @@ export default function AllSkillsPage() {
             <div className="all-skills-search animate-in animate-in-delay-1">
                 <div className="search-wrapper">
                     <span className="search-icon">🔍</span>
-                    <input
+                    <Input
                         type="text"
                         className="search-input"
                         placeholder="Filter toolboxes by name, description, ID, or category..."

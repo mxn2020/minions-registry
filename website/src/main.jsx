@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@geenius-ui/react-css/styles'
 import './index.css'
 import App from './App.jsx'
 

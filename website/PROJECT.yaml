@@ -1,0 +1,16 @@
+name: website
+project_scope: main
+project_type: standalone
+description: React + Vite
+tier: prototype
+lane: minions
+priority: medium
+oss: false
+stack: [typescript, react, vite]
+repo: null
+deploy_url: null
+last_active: 2026-02-24
+tags: [website, minion, toolbox, ecosystem]
+notes: null
+id: 19772942-6f75-4078-b3bc-75518999aebb
+category: minion-toolbox

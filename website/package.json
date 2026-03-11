@@ -10,9 +10,12 @@
     "prebuild": "node scripts/build-index.js",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run --passWithNoTests",
+    "stop": "pkill -f 'vite.*website' || true"
   },
   "dependencies": {
+    "@geenius-ui/react-css": "^0.1.2",
     "glob": "^13.0.6",
     "gray-matter": "^4.0.3",
     "react": "^19.2.0",
@@ -30,6 +33,19 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "vite": "^7.3.1"
-  }
+    "vite": "^7.3.1",
+    "vitest": "^4.0.0"
+  },
+  "description": "Standard compliance definition for website",
+  "author": "Mehdi Nabhani <mehdi@the-mehdi.com> (https://the-mehdi.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mxn2020/minions"
+  },
+  "keywords": [
+    "minions",
+    "ecosystem",
+    "compliance"
+  ]
 }
