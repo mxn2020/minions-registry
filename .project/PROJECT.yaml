@@ -1,0 +1,16 @@
+name: registry
+project_scope: main
+project_type: standalone
+description: Registry project
+tier: prototype
+lane: minions-platform
+priority: medium
+oss: false
+stack: ["typescript"]
+repo: "https://github.com/mxn2020/minions-registry"
+deploy_url: null
+last_active: 2026-03-11
+tags: ["registry", "package"]
+notes: null
+id: null
+category: library
